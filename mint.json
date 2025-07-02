@@ -1,0 +1,79 @@
+{
+  "name": "ChainUp Custody",
+  "logo": {
+    "dark": "/logo/chainupcustody-logo.svg",
+    "light": "/logo/chainupcustody-logo.svg"
+  },
+  "favicon": "/logo/chainupcustody.svg",
+  "colors": {
+    "primary": "#2662FF",
+    "light": "#2662FF",
+    "dark": "#2662FF",
+    "anchors": {
+      "from": "#DAF4F1",
+      "to": "#DAF4F1"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "英文",
+      "url": "https://custodydocs-en.chainup.com/introduction/overview/chainup-custody"
+    }
+  ],
+  "modeToggle": {
+    "default": "light",
+    "isHidden": true
+  },
+  "topbarCtaButton": {
+    "name": "官网",
+    "url": "https://custody.chainup.com/zh-CN"
+  },
+  "tabs": [
+    {
+      "name": "API文档",
+      "url": "api-references"
+    }
+  ],
+
+  "navigation": [
+    {
+      "group": "Tron资源购买",
+      "pages": [
+        {
+          "group": "API接口",
+          "pages": [
+            "api-references/gas-apis/apis/description",
+            {
+              "group": "资源购买",
+              "pages": [
+                "api-references/gas-apis/apis/gas-balance",
+                "api-references/gas-apis/apis/gas-create-order",
+                "api-references/gas-apis/apis/gas-order-price",
+                "api-references/gas-apis/apis/gas-record-list"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "交易回调通知",
+          "pages": [
+            "api-references/gas-apis/notify/tron"
+          ]
+        },
+        "api-references/gas-apis/err-code"
+      ]
+    }
+  ],
+  "api": {
+    "baseUrl": "https://openapi.chainup.com",
+    "playground": {
+      "mode": "simple"
+    }
+  },
+  "feedback": {
+    "suggestEdit": true,
+    "raiseIssue": true,
+    "thumbsRating": true
+  }
+}
+

@@ -1,0 +1,55 @@
+---
+title: 获取下单价格
+api: POST /api/mpc/tron/gas/order/price
+description: "获取下单价格"
+---
+
+#### 请求参数数据结构
+<ParamField query="resource_type" type="string" required>
+    资源类型
+</ParamField>
+<ParamField query="service_charge_type" type="string">
+    租凭周期
+</ParamField>
+
+#### 响应参数数据结构
+<Expandable title="object">
+    <ResponseField name="resource_type" type="string">资源类型</ResponseField>
+    <ResponseField name="min_number" type="string">最小下单数量</ResponseField>
+</Expandable>
+
+
+
+<RequestExample>
+    ```curl cURL
+    curl -X POST \
+    'http://127.0.0.1:13004/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=gy/X0LwFTE/03yBGP0PIGgzZMY+KFzlOFAo0SZkChygmN8RnV+y1tTEbjTAR2SD04xSX+r9FKWqIaATxev6yQ=='
+    ```
+</RequestExample>
+
+
+
+<ResponseExample>
+    ```json
+    {
+        "code":0,
+        "msg":"Success",
+        "data":
+    {"data":
+    {
+        "resource_type":"energy",
+        "min_number":32000,
+        "max_number":5000000,
+        "price_builder_list":[
+    {
+        "expire_min":"10",
+        "service_charge_type":"10010",
+        "price":"38.00000001",
+        "remaining_number":"600000"
+    }
+        ]
+    }
+    }
+    }
+    ```
+</ResponseExample>
