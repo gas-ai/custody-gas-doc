@@ -8,13 +8,13 @@ description: "购买资源创建订单"
 <ParamField query="request_id" type="string" required>
     业务方ID
 </ParamField>
-<ParamField query="receive_address" type="string">
+<ParamField query="receive_address" type="string" required>
     资源接收地址
 </ParamField>
-<ParamField query="service_charge_type" type="string">
-    租凭周期
+<ParamField query="service_charge_type" type="string" required>
+    租赁周期
 </ParamField>
-<ParamField query="energy_num" type="string">
+<ParamField query="energy_num" type="string" required>
     购买能量数量
 </ParamField>
 #### 响应参数数据结构

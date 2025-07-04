@@ -37,8 +37,9 @@
 
   "navigation": [
     {
-      "group": "Tron资源购买",
+      "group": "Gas Station",
       "pages": [
+        "api-references/gas-apis/contact",
         "api-references/gas-apis/guide/gas-account-guide",
         {
           "group": "API接口",
@@ -61,8 +62,7 @@
             "api-references/gas-apis/notify/tron"
           ]
         },
-        "api-references/gas-apis/err-code",
-        "api-references/gas-apis/contact"
+        "api-references/gas-apis/err-code"
       ]
     }
   ],
