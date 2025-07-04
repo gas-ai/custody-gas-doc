@@ -1,0 +1,48 @@
+---
+title: Create Order
+api: POST /api/mpc/tron/gas/create_order
+description: "Create Order"
+---
+
+#### Request Parameters
+<ParamField query="request_id" type="string" required>
+    request id
+</ParamField>
+<ParamField query="receive_address" type="string">
+    receive address
+</ParamField>
+<ParamField query="service_charge_type" type="string">
+    rent time code
+</ParamField>
+<ParamField query="energy_num" type="string">
+    energy num
+</ParamField>
+
+#### Response Parameters
+<Expandable title="object">
+    <ResponseField name="tradeNo" type="string">tradeNo</ResponseField>
+</Expandable>
+
+
+
+<RequestExample>
+    ```curl cURL
+    curl -X POST \
+    'https://openapi.gasstation.ai/api/mpc/tron/gas/create_order?app_id=49e9c57da66788e5178c8fec2905067b&data=+7d8kre2+XHyvSY9ueXT8DuoFsgeij0K7zdCS3rJkq7icyRh+frctiUaOROBU6kAoN4OJ+MPX174QAMLOSZ8f2UluhXcLA8HQdUfc0azP6O65XcfZrufshkHmeleQwz0xlbY4/GuegUaZqeDMu4Yja6a4eqL526f/RpZc12czAaiiozHgLs94qG7mQcgMVaW'
+    ```
+</RequestExample>
+
+
+
+<ResponseExample>
+    ```json
+    {
+        "code":0,
+        "msg":"Success",
+        "data":
+    {
+        "trade_no":"1234"
+    }
+    }
+    ```
+</ResponseExample>

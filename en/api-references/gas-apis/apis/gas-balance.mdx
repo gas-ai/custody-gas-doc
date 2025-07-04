@@ -1,18 +1,18 @@
 ---
-title: 查询余额
+title: Query Balance
 api: POST /api/mpc/tron/gas/balance
-description: "查询账户余额"
+description: "Query Balance"
 ---
 
-#### 请求参数数据结构
+#### Request Parameters
 <ParamField query="time" type="string" required>
-    当前时间戳，例: `1600128590`
+    current timestamp，example: `1600128590`
 </ParamField>
 
-#### 响应参数数据结构
+#### Response Parameters
 <Expandable title="object">
-    <ResponseField name="symbol" type="string">币种</ResponseField>
-    <ResponseField name="balance" type="string">余额</ResponseField>
+    <ResponseField name="symbol" type="string">symbol</ResponseField>
+    <ResponseField name="balance" type="string">balance</ResponseField>
 </Expandable>
 
 
@@ -20,7 +20,7 @@ description: "查询账户余额"
 <RequestExample>
     ```curl cURL
     curl -X POST \
-    'http://127.0.0.1:13004/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU='
+    'https://openapi.gasstation.ai/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU='
     ```
 </RequestExample>
 

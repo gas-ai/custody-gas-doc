@@ -6,16 +6,27 @@ description: "获取下单价格"
 
 #### 请求参数数据结构
 <ParamField query="resource_type" type="string" required>
-    资源类型
+    资源类型,默认为"energy"
 </ParamField>
 <ParamField query="service_charge_type" type="string">
-    租凭周期
+    租凭周期:不填返回所有支持的租凭信息:分钟:10010-10分钟,小时:20001-1小时,天:30001-1天
 </ParamField>
 
 #### 响应参数数据结构
 <Expandable title="object">
     <ResponseField name="resource_type" type="string">资源类型</ResponseField>
     <ResponseField name="min_number" type="string">最小下单数量</ResponseField>
+    <ResponseField name="max_number" type="string">最大下单数量</ResponseField>
+    <ResponseField name="price_builder_list" type="string">
+        价格列表
+        <Expandable title="object">
+            <ResponseField name="expire_min" type="string">过期分钟数</ResponseField>
+            <ResponseField name="service_charge_type" type="string">租凭周期</ResponseField>
+            <ResponseField name="price" type="string">价格</ResponseField>
+            <ResponseField name="remaining_number" type="string">剩余可租赁数量级</ResponseField>
+        </Expandable>
+    </ResponseField>
+
 </Expandable>
 
 
@@ -23,7 +34,7 @@ description: "获取下单价格"
 <RequestExample>
     ```curl cURL
     curl -X POST \
-    'http://127.0.0.1:13004/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=gy/X0LwFTE/03yBGP0PIGgzZMY+KFzlOFAo0SZkChygmN8RnV+y1tTEbjTAR2SD04xSX+r9FKWqIaATxev6yQ=='
+    'https://openapi.gasstation.ai/api/mpc/tron/gas/order/price?app_id=49e9c57da66788e5178c8fec2905067b&data=lgy/X0LwFTE/03yBGP0PIGgzZMY+KFzlOFAo0SZkChygmN8RnV+y1tTEbjTAR2SD04xSX+r9FKWqIaATxev6yQ=='
     ```
 </RequestExample>
 
@@ -35,7 +46,8 @@ description: "获取下单价格"
         "code":0,
         "msg":"Success",
         "data":
-    {"data":
+    {
+        "data":
     {
         "resource_type":"energy",
         "min_number":32000,
