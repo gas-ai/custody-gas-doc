@@ -1,10 +1,10 @@
 {
   "name": "ChainUp Custody",
   "logo": {
-    "dark": "/logo/chainupcustody-logo.svg",
-    "light": "/logo/chainupcustody-logo.svg"
+    "dark": "/logo/gasstation_logo.png",
+    "light": "/logo/gasstation_logo.png"
   },
-  "favicon": "/logo/chainupcustody.svg",
+  "favicon": "/logo/gasstation_logo.png",
   "colors": {
     "primary": "#2662FF",
     "light": "#2662FF",
@@ -26,7 +26,7 @@
   },
   "topbarCtaButton": {
     "name": "Official Website",
-    "url": "https://custody.chainup.com"
+    "url": "https://gasstation.ai/en-US"
   },
   "tabs": [
     {
