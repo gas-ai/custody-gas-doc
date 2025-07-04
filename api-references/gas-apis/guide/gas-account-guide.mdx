@@ -1,0 +1,37 @@
+---
+title: 接入指导
+---
+
+本指南将帮助您完成 Gas Station 平台 API 的接入，包括 API 创建、密钥获取及参数加密。
+
+## 步骤 1：在 Gas Station 平台创建 API
+
+1. 登录 Gas Station 平台。
+2. 在左侧导航栏选择 **API 管理**。
+3. 点击 **创建 API** 按钮，填写相关信息后提交。
+![创建API 示例](/images/apis/gas-station-add-api.png)
+4. 创建成功后，API 会出现在 API 列表中。
+
+## 步骤 2：查看 API 的 app_id 和密钥
+
+1. 在 **API 管理** 页面，找到刚刚创建的 API。
+2. 点击该 API 进入详情页。
+![APi详情示例](/images/apis/gas-station-api-detail.png)
+3. 在详情页可以看到 `app_id`，如需查看 `密钥`，需先通过验签验证身份后方可显示（请妥善保存密钥，避免泄露）。
+![API验证示例](/images/apis/gas-station-sign.png)
+![密钥查看示例](/images/apis/gas-station-key.png)
+
+## 步骤 3：用密钥对接口请求参数进行 AES 加密
+
+调用 API 时，需将请求参数用密钥进行 AES 加密。常用的 AES 加密模式有 ECB、CBC、CFB、OFB、CTR 等，常用填充方式为 PKCS7。加密前请确认平台要求的加密模式和填充方式。
+
+![AES 加密示例](/images/apis/gas-station-aes.png)
+
+> **注意：**
+> - 密钥长度需与加密算法匹配（如 16 字节对应 AES-128，24 字节对应 AES-192，32 字节对应 AES-256）。
+> - ECB 模式适合数据量较小的场景，安全性略低，推荐优先使用 CBC 等更安全模式（如平台支持）。
+> - 加密前需对明文进行填充，常用 PKCS7 填充。
+> - 不同语言实现方式略有差异，请参考官方文档或 SDK。
+> - 密钥请妥善保管，切勿泄露。
+
+更多 AES 加密模式、填充方式及在线加解密工具详见 [toolhelper.cn AES 加密工具](https://www.toolhelper.cn/SymmetricEncryption/AES)。

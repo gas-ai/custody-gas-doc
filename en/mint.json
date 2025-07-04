@@ -1,5 +1,5 @@
 {
-  "name": "ChainUp Custody",
+  "name": "Gas Station",
   "logo": {
     "dark": "/logo/gasstation_logo.png",
     "light": "/logo/gasstation_logo.png"
@@ -39,6 +39,7 @@
     {
       "group": "Tron Resource",
       "pages": [
+        "api-references/gas-apis/guide/gas-account-guide",
         {
           "group": "API Interface",
           "pages": [
@@ -60,7 +61,8 @@
             "api-references/gas-apis/notify/tron"
           ]
         },
-        "api-references/gas-apis/err-code"
+        "api-references/gas-apis/err-code",
+        "api-references/gas-apis/contact"
       ]
     }
   ],
