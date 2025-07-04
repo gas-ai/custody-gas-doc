@@ -36,6 +36,13 @@ Output Format: Base64
 | app_id | String | Required     | Merchant unique identifier                                                  |
 | data   | String | Required     |`Data in JSON format` Encrypted string; encrypted with the Client's AES  key, specific encryption information is described in the `Request Parameter Data Structure` of each interface |
 
+
+**Example Request Parameters：**
+`{ "time": "1600128590"}`
+
+**Encrypted data：**
+`UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU=`
+
  ```curl cURL
     curl -X POST \
     'https://openapi.gasstation.ai/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU='

@@ -12,10 +12,10 @@ description: "Create Order"
     receive address
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
-    rent time code
+    rent time code: Request the order/price interface to return the cost codes for minutes, hours, days, and different times
 </ParamField>
-<ParamField query="energy_num" type="string" required>
-    energy num
+<ParamField query="energy_num" type="integer" required>
+    energy num : min value is 64000
 </ParamField>
 
 #### Response Parameters

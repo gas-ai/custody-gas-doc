@@ -1,12 +1,12 @@
 ---
 title: 查询记录
-api: POST /api/mpc/tron/gas/record/list
+api: GET /api/mpc/tron/gas/record/list
 description: "通过id获取特定的代理记录"
 ---
 
 #### 请求参数数据结构
 <ParamField query="ids" type="string" required>
-    多个id的字符串，英文逗号分割，例:123,345
+    多个request_id的字符串，英文逗号分割，例:123,345
 </ParamField>
 
 #### 响应参数数据结构
@@ -47,33 +47,32 @@ description: "通过id获取特定的代理记录"
 <ResponseExample>
     ```json
     {
-        "code":0,
-        "msg":"Success",
-        "data":
+        "code": 0,
+        "msg": "Success",
+        "data": [
     {
-        "data":[
+        "trade_no": "GAS47561362",
+        "id": 18,
+        "status": 10,
+        "receive_address": "TQcfr115r65EnxqqVLquYw84ux9VfUkpy4",
+        "amount": 2.432,
+        "energy_num": 64000,
+        "delegate_energy_num": 64000,
+        "reclaim_energy_num": 64000,
+        "item_list": [
     {
-        "trade_no":"GAS47561362",
-        "id":18,
-        "status":10,
-        "receive_address":"TQcfr115r65EnxqqVLquYw84ux9VfUkpy4",
-        "amount":2.432000000000000000,
-        "energy_num":64000,
-        "delegate_energy_num":64000,
-        "reclaim_energy_num":64000,
-        "item_list":[
-    {
-        "energy_num":64000,
-        "energy_price":"38",
-        "energy_txid":"6468ed31731fa9fed5b620aefdeefdb0239d0aa6e918621602f080eb09f0802f",
-        "delegate_time":"2025-06-27 22:09:11",
-        "resource_address":"TWJiWSTcPqdpUY6goH5N5ePsTiSUCXejuA",
-        "reclaim_txid":"ae2150732ca9dcf41e530fbb3828ebe4e601b69c6b244c39726daacebc021e08",
-        "reclaim_time":"2025-06-27 22:22:00"
+        "energy_num": 64000,
+        "energy_price": "38",
+        "energy_txid": "6468ed31731fa9fed5b620aefdeefdb0239d0aa6e918621602f080eb09f0802f",
+        "delegate_time": "2025-06-27 22:09:11",
+        "resource_address": "TWJiWSTcPqdpUY6goH5N5ePsTiSUCXejuA",
+        "reclaim_txid": "ae2150732ca9dcf41e530fbb3828ebe4e601b69c6b244c39726daacebc021e08",
+        "reclaim_time": "2025-06-27 22:22:00"
     }
         ]
-    }]
     }
+        ]
     }
+
     ```
 </ResponseExample>
