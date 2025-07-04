@@ -17,7 +17,7 @@
   "topbarLinks": [
     {
       "name": "英文",
-      "url": "https://gasdocs-en.chainup.com/api-references/gas-apis/apis/description"
+      "url": "https://gasdocs-en.gasstation.ai/api-references/gas-apis/apis/description"
     }
   ],
   "modeToggle": {
@@ -65,7 +65,7 @@
     }
   ],
   "api": {
-    "baseUrl": "https://openapi.chainup.com",
+    "baseUrl": "https://openapi.gasstation.ai",
     "playground": {
       "mode": "simple"
     }

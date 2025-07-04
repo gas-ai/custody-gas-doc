@@ -17,7 +17,7 @@
   "topbarLinks": [
     {
       "name": "ZH-CN",
-      "url": "https://gasdocs-zh.chainup.com/api-references/gas-apis/apis/description"
+      "url": "https://gasdocs-zh.gasstation.ai/api-references/gas-apis/apis/description"
     }
   ],
   "modeToggle": {
@@ -65,7 +65,7 @@
     }
   ],
   "api": {
-    "baseUrl": "https://openapi.chainup.com",
+    "baseUrl": "https://openapi.gasstation.ai",
     "playground": {
       "mode": "simple"
     }
