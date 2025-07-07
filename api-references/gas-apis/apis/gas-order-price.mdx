@@ -5,14 +5,16 @@ description: "获取下单价格"
 ---
 
 #### 请求参数数据结构
+
 <ParamField query="resource_type" type="string" required>
-    资源类型,默认为"energy"
+  资源类型,默认为"energy"
 </ParamField>
 <ParamField query="service_charge_type" type="string">
-    租赁周期:不填返回所有支持的租赁信息:分钟:10010-10分钟,小时:20001-1小时,天:30001-1天
+  租赁周期:不填返回所有支持的租赁信息:分钟:10010-10分钟,小时:20001-1小时,天:30001-1天
 </ParamField>
 
 #### 响应参数数据结构
+
 <Expandable title="object">
     <ResponseField name="resource_type" type="string">资源类型</ResponseField>
     <ResponseField name="min_number" type="string">最小下单数量</ResponseField>
@@ -29,35 +31,30 @@ description: "获取下单价格"
 
 </Expandable>
 
-
-
 <RequestExample>
-    ```curl cURL
-    curl -X POST \
-    'https://openapi.gasstation.ai/api/mpc/tron/gas/order/price?app_id=49e9c57da66788e5178c8fec2905067b&data=lgy/X0LwFTE/03yBGP0PIGgzZMY+KFzlOFAo0SZkChygmN8RnV+y1tTEbjTAR2SD04xSX+r9FKWqIaATxev6yQ=='
-    ```
+  ```curl cURL curl -X POST \
+  'https://openapi.gasstation.ai/api/mpc/tron/gas/order/price?app_id=49e9c57da66788e5178c8fec2905067b&data=lgy/X0LwFTE/03yBGP0PIGgzZMY+KFzlOFAo0SZkChygmN8RnV+y1tTEbjTAR2SD04xSX+r9FKWqIaATxev6yQ=='
+  ```
 </RequestExample>
-
-
 
 <ResponseExample>
     ```json
     {
-    "code": 0,
-    "msg": "Success",
-    "data": {
-        "resource_type": "energy",
-        "min_number": 32000,
-        "max_number": 5000000,
-        "price_builder_list": [
-            {
-                "expire_min": "10",
-                "service_charge_type": "10010",
-                "price": "38.00000001",
-                "remaining_number": "600000"
-            }
-        ]
+        "code": 0,
+        "msg": "Success",
+        "data": {
+            "resource_type": "energy",
+            "min_number": 32000,
+            "max_number": 5000000,
+            "price_builder_list": [
+                {
+                    "expire_min": "10",
+                    "service_charge_type": "10010",
+                    "price": "38.00000001",
+                    "remaining_number": "600000"
+                }
+            ]
+        }
     }
-}
     ```
 </ResponseExample>

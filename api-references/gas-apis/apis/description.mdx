@@ -4,12 +4,11 @@ title: 统一说明
 
 ## I. 域名及API密钥
 
-| 生产环境域名 (https://openapi.gasstation.ai/ ) | 不支持测试环境  |
-| :---------------------------- | ------------------------------------------------- |
-| app_id:                       | 请创建api后获取                                  |
-| secrect:                      | 请创建api后获取      |
-
-
+| 参数       | 说明                                                           |
+| :--------- | -------------------------------------------------------------- |
+| api domain | 生产环境域名 (https://openapi.gasstation.ai/ )，不支持测试环境 |
+| app_id:    | 请创建api后获取                                                |
+| secrect:   | 请创建api后获取                                                |
 
 ### AES加密方式
 
@@ -17,26 +16,25 @@ title: 统一说明
 
 填充模式：PKCS7
 
-输出格式: Base64
-
+输出格式: Base64 UrlSafe
 
 ## II. 接口规则
 
-| 传输方式:     | https                                                 |
+| 参数          | 说明                                                   |
 | :------------ | ------------------------------------------------------ |
+| 传输方式:     | https                                                  |
 | 请求地址:     | 域名+接口地址                                          |
-| 请求头:      | Content-Type:application/x-www-form-urlencoded        |
-| 加密算法:     | AES       |
-| 响应头:     | Content-Type:application/json;charset=utf-8   |
+| 请求头:       | Content-Type:application/x-www-form-urlencoded         |
+| 加密算法:     | AES                                                    |
+| 响应头:       | Content-Type:application/json;charset=utf-8            |
 | 响应状态码为: | `0`表示处理`成功`，非 0 表示**请求错误**或**系统异常** |
 
 ## III. 请求参数统一格式
 
-| Param  | 类型   | 是否必须 | 说明                                                      |
-| :----- | :----- | :----------------- | :------------------------------------- |
-| app_id | String | 必须     | 商户唯一标识                                              |
+| Param  | 类型   | 是否必须 | 说明                                                                                   |
+| :----- | :----- | :------- | :------------------------------------------------------------------------------------- |
+| app_id | String | 必须     | 商户唯一标识                                                                           |
 | data   | String | 必须     | `json格式的数据`加密之后的字符串；客户AES加密，具体加密信息见各接口 `请求参数数据结构` |
-
 
 **示例请求参数：**
 `{ "time": "1600128590"}`
@@ -44,29 +42,26 @@ title: 统一说明
 **加密数据：**
 `UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU=`
 
-
- ```curl cURL
-    curl -X POST \
-    'https://openapi.gasstation.ai/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU='
+```curl cURL
+   curl -X POST \
+   'https://openapi.gasstation.ai/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU='
 ```
-
 
 ## IV. 响应参数统一格式
 
-| Param | 类型   | 是否必须 | 说明                                                   |
-| :---- | :----- | :------- | :----------------------------------------------------- |
-| code  | String | 是       | 状态码，例：100002                                     |
-| msg   | String | 是       | 响应结果说明，例：请求参数错误                         |
-| data  | String | 否       | 具体响应数据，数据结构定义见各接口  `响应参数数据结构` |
+| 参数 | 类型   | 是否必须 | 说明                                                  |
+| :--- | :----- | :------- | :---------------------------------------------------- |
+| code | String | 是       | 状态码，例：100002                                    |
+| msg  | String | 是       | 响应结果说明，例：请求参数错误                        |
+| data | String | 否       | 具体响应数据，数据结构定义见各接口 `响应参数数据结构` |
 
 ```json
 {
-    "code": 0,
-    "msg": "Success",
-    "data": {
-        "symbol": "trx",
-        "balance": "92.4792050000000000"
-    }
+  "code": 0,
+  "msg": "Success",
+  "data": {
+    "symbol": "trx",
+    "balance": "92.4792050000000000"
+  }
 }
-
 ```

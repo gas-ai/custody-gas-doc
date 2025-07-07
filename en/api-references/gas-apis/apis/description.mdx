@@ -4,12 +4,11 @@ title: Overview
 
 ## I. Common Request Parameters
 
-| Production environment domain name (https://openapi.gasstation.ai/ ) | Not supported in the test environment  |
-| :---------------------------- | ------------------------------------------------- |
-| app_id:                       | Please create the API first, then retrieve it                                  |
-| secrect:                      | Please create the API first, then retrieve it      |
-
-
+| Param      | Description                                                                                    |
+| :--------- | ---------------------------------------------------------------------------------------------- |
+| api domain | Production domain name (https://openapi.gasstation.ai/ ),Not supported in the test environment |
+| app_id:    | Please create the API first, then retrieve it                                                  |
+| secrect:   | Please create the API first, then retrieve it                                                  |
 
 ### AES Encryption Method
 
@@ -17,25 +16,23 @@ Operation Mode：ECB
 
 Cryptography：PKCS7
 
-Output Format: Base64
-
+Output Format: Base64 UrlSafe
 
 ## II. Interface Rules
 
-| Transmission Method: | https (temporary use of http in the testing environment)                           |
-| :--------------------- | ------------------------------------------------------ |
+| Param                 | Description                                                                                   |
+| :-------------------- | --------------------------------------------------------------------------------------------- |
+| Transmission Method:  | https                                                                                         |
 | Response Status Code: | `0` indicates processing `success`, non-0 indicates **request error** or **system exception** |
-| Request Address:     | Domain + Interface Address                                          |
-| Encryption Algorithm: | AES                                                   |
-
+| Request Address:      | Domain + Interface Address                                                                    |
+| Encryption Algorithm: | AES                                                                                           |
 
 ## III. Common Response Parameters
 
-| Param | Type   | Required | Description                                               |
-| :----- | :----- | :------- | :-------------------------------------------------------- |
-| app_id | String | Required     | Merchant unique identifier                                                  |
-| data   | String | Required     |`Data in JSON format` Encrypted string; encrypted with the Client's AES  key, specific encryption information is described in the `Request Parameter Data Structure` of each interface |
-
+| Param  | Type   | Required | Description                                                                                                                                                                           |
+| :----- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| app_id | String | Required | Merchant unique identifier                                                                                                                                                            |
+| data   | String | Required | `Data in JSON format` Encrypted string; encrypted with the Client's AES key, specific encryption information is described in the `Request Parameter Data Structure` of each interface |
 
 **Example Request Parameters：**
 `{ "time": "1600128590"}`
@@ -43,27 +40,26 @@ Output Format: Base64
 **Encrypted data：**
 `UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU=`
 
- ```curl cURL
-    curl -X POST \
-    'https://openapi.gasstation.ai/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU='
+```curl cURL
+   curl -X POST \
+   'https://openapi.gasstation.ai/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU='
 ```
+
 ### Response Parameter Format
 
-| Param | Type   | Required | Description                                               |
-| :---- | :----- | :------- | :-------------------------------------------------------- |
-| code  | String | Yes      | Status code, e.g., 100002                                |
-| msg   | String | Yes      | Explanation of the response result, e.g., Request parameter error |
+| Param | Type   | Required | Description                                                                                                 |
+| :---- | :----- | :------- | :---------------------------------------------------------------------------------------------------------- |
+| code  | String | Yes      | Status code, e.g., 100002                                                                                   |
+| msg   | String | Yes      | Explanation of the response result, e.g., Request parameter error                                           |
 | data  | String | No       | Specific response data; data structure defined in the `Response Parameter Data Structure` of each interface |
 
-
 ```json
- {
-    "code": 0,
-    "msg": "Success",
-    "data": {
-        "symbol": "trx",
-        "balance": "92.4792050000000000"
-    }
+{
+  "code": 0,
+  "msg": "Success",
+  "data": {
+    "symbol": "trx",
+    "balance": "92.4792050000000000"
+  }
 }
-
 ```

@@ -5,38 +5,39 @@ description: "查询账户余额"
 ---
 
 #### 请求参数数据结构
+
 <ParamField query="time" type="string" required>
-    当前时间戳，例: `1600128590`
+  当前时间戳，例: `1600128590`
 </ParamField>
 
 #### 响应参数数据结构
+
 <Expandable title="object">
-    <ResponseField name="symbol" type="string">币种</ResponseField>
-    <ResponseField name="balance" type="string">余额</ResponseField>
+  <ResponseField name="symbol" type="string">
+    币种
+  </ResponseField>
+  <ResponseField name="balance" type="string">
+    余额
+  </ResponseField>
 </Expandable>
 
-
-
 <RequestExample>
-    ```curl cURL
-    curl -X POST \
-    'https://openapi.gasstation.ai/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU='
-    ```
+  ```curl cURL curl -X POST \
+  'https://openapi.gasstation.ai/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU='
+  ```
 </RequestExample>
-
-
 
 <ResponseExample>
     ```json
     {
-    "code": 0,
-    "msg": "Success",
-    "data": {
-        "symbol": "trx",
-        "balance": "92.4792050000000000"
+        "code": 0,
+        "msg": "Success",
+        "data": {
+                "symbol": "trx",
+                "balance": "92.4792050000000000"
+        }
     }
-}
-
 
     ```
+
 </ResponseExample>

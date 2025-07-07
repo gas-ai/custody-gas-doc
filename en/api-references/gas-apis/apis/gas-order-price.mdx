@@ -5,17 +5,16 @@ description: "Get Price"
 ---
 
 #### Request Parameters
+
 <ParamField query="resource_type" type="string" required>
-    resource type,default "energy"
+  resource type,default "energy"
 </ParamField>
 <ParamField query="service_charge_type" type="string">
-    Resource purchase cycle:
-    10010 - 10 minutes,
-    20001 - 1 hour,
-    30001 - 1 day
+  Resource purchase cycle: 10010 - 10 minutes, 20001 - 1 hour, 30001 - 1 day
 </ParamField>
 
 #### Response Parameters
+
 <Expandable title="object">
     <ResponseField name="resource_type" type="string">resource type</ResponseField>
     <ResponseField name="min_number" type="string">min number</ResponseField>
@@ -32,36 +31,32 @@ description: "Get Price"
 
 </Expandable>
 
-
-
 <RequestExample>
-    ```curl cURL
-    curl -X POST \
-    'https://openapi.gasstation.ai/api/mpc/tron/gas/order/price?app_id=49e9c57da66788e5178c8fec2905067b&data=lgy/X0LwFTE/03yBGP0PIGgzZMY+KFzlOFAo0SZkChygmN8RnV+y1tTEbjTAR2SD04xSX+r9FKWqIaATxev6yQ=='
-    ```
+  ```curl cURL curl -X POST \
+  'https://openapi.gasstation.ai/api/mpc/tron/gas/order/price?app_id=49e9c57da66788e5178c8fec2905067b&data=lgy/X0LwFTE/03yBGP0PIGgzZMY+KFzlOFAo0SZkChygmN8RnV+y1tTEbjTAR2SD04xSX+r9FKWqIaATxev6yQ=='
+  ```
 </RequestExample>
-
-
 
 <ResponseExample>
     ```json
    {
-    "code": 0,
-    "msg": "Success",
-    "data": {
-        "resource_type": "energy",
-        "min_number": 32000,
-        "max_number": 5000000,
-        "price_builder_list": [
-            {
-                "expire_min": "10",
-                "service_charge_type": "10010",
-                "price": "38.00000001",
-                "remaining_number": "600000"
-            }
-        ]
+        "code": 0,
+        "msg": "Success",
+        "data": {
+            "resource_type": "energy",
+            "min_number": 32000,
+            "max_number": 5000000,
+            "price_builder_list": [
+                {
+                    "expire_min": "10",
+                    "service_charge_type": "10010",
+                    "price": "38.00000001",
+                    "remaining_number": "600000"
+                }
+            ]
+        }
     }
-}
 
     ```
+
 </ResponseExample>
