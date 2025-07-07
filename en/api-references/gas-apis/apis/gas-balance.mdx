@@ -16,13 +16,14 @@ description: "Query Balance"
   <ResponseField name="symbol" type="string">
     symbol
   </ResponseField>
-  <ResponseField name="balance" type="string">
+  <ResponseField name="balance" type="decimal">
     balance
   </ResponseField>
 </Expandable>
 
 <RequestExample>
-  ```curl cURL curl -X POST \
+  ```curl cURL
+   curl -X GET \
   'https://openapi.gasstation.ai/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU='
   ```
 </RequestExample>

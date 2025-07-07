@@ -1,10 +1,10 @@
 {
   "name": "Gas Station",
   "logo": {
-    "dark": "/logo/gasstation_logo.png",
-    "light": "/logo/gasstation_logo.png"
+    "dark": "/logo/gas_station_logo.svg",
+    "light": "/logo/gas_station_logo.svg"
   },
-  "favicon": "/logo/gasstation_logo.png",
+  "favicon": "/logo/gas_station_logo.svg",
   "colors": {
     "primary": "#2662FF",
     "light": "#2662FF",

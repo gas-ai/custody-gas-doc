@@ -17,22 +17,23 @@ description: "获取下单价格"
 
 <Expandable title="object">
     <ResponseField name="resource_type" type="string">资源类型</ResponseField>
-    <ResponseField name="min_number" type="string">最小下单数量</ResponseField>
-    <ResponseField name="max_number" type="string">最大下单数量</ResponseField>
-    <ResponseField name="price_builder_list" type="string">
+    <ResponseField name="min_number" type="integer">最小下单数量</ResponseField>
+    <ResponseField name="max_number" type="integer">最大下单数量</ResponseField>
+    <ResponseField name="price_builder_list" type="list">
         价格列表
         <Expandable title="object">
-            <ResponseField name="expire_min" type="string">过期分钟数</ResponseField>
+            <ResponseField name="expire_min" type="integer">过期分钟数</ResponseField>
             <ResponseField name="service_charge_type" type="string">租赁周期code</ResponseField>
-            <ResponseField name="price" type="string">价格</ResponseField>
-            <ResponseField name="remaining_number" type="string">剩余可租赁数量</ResponseField>
+            <ResponseField name="price" type="decimal">价格</ResponseField>
+            <ResponseField name="remaining_number" type="long">剩余可租赁数量</ResponseField>
         </Expandable>
     </ResponseField>
 
 </Expandable>
 
 <RequestExample>
-  ```curl cURL curl -X POST \
+  ```curl cURL
+    curl -X GET \
   'https://openapi.gasstation.ai/api/mpc/tron/gas/order/price?app_id=49e9c57da66788e5178c8fec2905067b&data=lgy/X0LwFTE/03yBGP0PIGgzZMY+KFzlOFAo0SZkChygmN8RnV+y1tTEbjTAR2SD04xSX+r9FKWqIaATxev6yQ=='
   ```
 </RequestExample>

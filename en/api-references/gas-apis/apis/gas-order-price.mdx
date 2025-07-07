@@ -17,22 +17,23 @@ description: "Get Price"
 
 <Expandable title="object">
     <ResponseField name="resource_type" type="string">resource type</ResponseField>
-    <ResponseField name="min_number" type="string">min number</ResponseField>
-    <ResponseField name="max_number" type="string">max number</ResponseField>
-    <ResponseField name="price_builder_list" type="string">
+    <ResponseField name="min_number" type="integer">min number</ResponseField>
+    <ResponseField name="max_number" type="integer">max number</ResponseField>
+    <ResponseField name="price_builder_list" type="list">
         price list
         <Expandable title="object">
-            <ResponseField name="expire_min" type="string">expire min</ResponseField>
+            <ResponseField name="expire_min" type="integer">expire min</ResponseField>
             <ResponseField name="service_charge_type" type="string">service charge type</ResponseField>
-            <ResponseField name="price" type="string">price</ResponseField>
-            <ResponseField name="remaining_number" type="string">remaining number</ResponseField>
+            <ResponseField name="price" type="decimal">price</ResponseField>
+            <ResponseField name="remaining_number" type="long">remaining number</ResponseField>
         </Expandable>
     </ResponseField>
 
 </Expandable>
 
 <RequestExample>
-  ```curl cURL curl -X POST \
+  ```curl cURL
+    curl -X GET \
   'https://openapi.gasstation.ai/api/mpc/tron/gas/order/price?app_id=49e9c57da66788e5178c8fec2905067b&data=lgy/X0LwFTE/03yBGP0PIGgzZMY+KFzlOFAo0SZkChygmN8RnV+y1tTEbjTAR2SD04xSX+r9FKWqIaATxev6yQ=='
   ```
 </RequestExample>

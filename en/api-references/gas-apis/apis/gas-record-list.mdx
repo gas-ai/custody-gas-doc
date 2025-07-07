@@ -6,7 +6,7 @@ description: "Retrieve specific order records through ID"
 
 #### Request Parameters
 
-<ParamField query="ids" type="string" required>
+<ParamField query="request_ids" type="string" required>
   Comma-separated `request_id` strings
 </ParamField>
 
@@ -16,32 +16,32 @@ description: "Retrieve specific order records through ID"
   <ResponseField name="trade_no" type="string">
     Resource purchase transaction No
   </ResponseField>
-  <ResponseField name="id" type="string">
+  <ResponseField name="requset_id" type="string">
     Unique transaction identifier
   </ResponseField>
-  <ResponseField name="status" type="string">
+  <ResponseField name="status" type="integer">
     Status: 0 for order creation success, 1 for resource delegation success, 2
     for resource delegation failure 10 for reclaim success
   </ResponseField>
   <ResponseField name="receive_address" type="string">
     resource receive address
   </ResponseField>
-  <ResponseField name="amount" type="string">
+  <ResponseField name="amount" type="decimal">
     amount
   </ResponseField>
-  <ResponseField name="energy_num" type="string">
+  <ResponseField name="energy_num" type="integer">
     energy num
   </ResponseField>
-  <ResponseField name="delegate_energy_num" type="string">
+  <ResponseField name="delegate_energy_num" type="integer">
     delegate energy num
   </ResponseField>
-  <ResponseField name="reclaim_energy_num" type="string">
+  <ResponseField name="reclaim_energy_num" type="integer">
     reclaim energy num
   </ResponseField>
   <ResponseField name="item_list" type="string">
     子订单
     <Expandable title="object">
-      <ResponseField name="energy_num" type="string">
+      <ResponseField name="energy_num" type="integer">
         energy num
       </ResponseField>
       <ResponseField name="energy_price" type="string">
@@ -53,13 +53,13 @@ description: "Retrieve specific order records through ID"
       <ResponseField name="delegate_time" type="string">
         delegate time
       </ResponseField>
-      <ResponseField name="resource_address" type="long">
+      <ResponseField name="resource_address" type="string">
         resource address
       </ResponseField>
       <ResponseField name="reclaim_txid" type="string">
         reclaim txid
       </ResponseField>
-      <ResponseField name="reclaim_time" type="long">
+      <ResponseField name="reclaim_time" type="string">
         reclaim time
       </ResponseField>
     </Expandable>
@@ -67,7 +67,8 @@ description: "Retrieve specific order records through ID"
 </Expandable>
 
 <RequestExample>
-  ```curl cURL curl -X POST \
+  ```curl cURL
+    curl -X GET \
   'https://openapi.gasstation.ai/api/mpc/tron/gas/record/list?app_id=49e9c57da66788e5178c8fec2905067b&data=fmDddiC4Rm2e4dV5JbDV805L99g29LQDOcSsdTrUXXU='
   ```
 </RequestExample>

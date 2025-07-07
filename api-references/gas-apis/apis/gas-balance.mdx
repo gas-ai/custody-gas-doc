@@ -16,13 +16,14 @@ description: "查询账户余额"
   <ResponseField name="symbol" type="string">
     币种
   </ResponseField>
-  <ResponseField name="balance" type="string">
+  <ResponseField name="balance" type="decimal">
     余额
   </ResponseField>
 </Expandable>
 
 <RequestExample>
-  ```curl cURL curl -X POST \
+  ```curl cURL
+    curl -X GET \
   'https://openapi.gasstation.ai/api/mpc/tron/gas/balance?app_id=49e9c57da66788e5178c8fec2905067b&data=UJ3SABwJnabqiDf0WMSANU5L99g29LQDOcSsdTrUXXU='
   ```
 </RequestExample>
