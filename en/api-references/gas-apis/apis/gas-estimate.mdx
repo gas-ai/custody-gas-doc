@@ -1,0 +1,64 @@
+---
+title: Estimate Order Amount
+api: GET /api/mpc/tron/gas/estimate
+description: "Estimate Order Amount"
+---
+
+#### Request Parameters
+
+<ParamField query="receive_address" type="string" required>
+    receive address
+</ParamField>
+<ParamField query="address_to" type="string" required>
+    The transfer address for estimating miner fees.
+</ParamField>
+<ParamField query="contract_address" type="string" required>
+    Contract address for estimating miner fees.
+</ParamField>
+<ParamField query="service_charge_type" type="string" required>
+    rent time code: Request the order/price interface to return the cost codes for
+    minutes, hours, days, and different times.
+    <p>eg:10010 - 10 minutes, 20001 - 1 hour, 30001 - 1 day</p>
+</ParamField>
+
+
+#### Response Parameters
+
+<Expandable title="object">
+    <ResponseField name="contract_address" type="string">contract address</ResponseField>
+    <ResponseField name="address_to" type="string">transfer address</ResponseField>
+    <ResponseField name="receive_address" type="string">receive address</ResponseField>
+    <ResponseField name="amount" type="decimal">order amount</ResponseField>
+    <ResponseField name="energy_amount" type="decimal">energy amount</ResponseField>
+    <ResponseField name="active_amount" type="decimal">active amount</ResponseField>
+    <ResponseField name="energy_num" type="integer">energy num</ResponseField>
+    <ResponseField name="energy_price" type="decimal">energy price</ResponseField>
+    <ResponseField name="service_charge_type" type="string">rent time code</ResponseField>
+</Expandable>
+
+<RequestExample>
+    ```curl cURL
+    curl -X GET \
+    'https://openapi.gasstation.ai/api/mpc/tron/gas/estimate?app_id=49e9c57da66788e5178c8fec2905067b&data=lgy/X0LwFTE/03yBGP0PIGgzZMY+KFzlOFAo0SZkChygmN8RnV+y1tTEbjTAR2SD04xSX+r9FKWqIaATxev6yQ=='
+    ```
+</RequestExample>
+
+<ResponseExample>
+    ```json
+    {
+        "code": 0,
+        "msg": "Success",
+        "data": {
+            "contract_address": "TED4rvM5VAG8kzKULTb7GXXY6ph9aTwjt3",
+            "address_to": "TE4Smnqa4cWiKZdmjzD64peEqLFqk213HS",
+            "receive_address": "TXxtczsXf1EYgWEbwSxwC85iMfdv6CGNRa",
+            "amount": "1.216000",
+            "energy_amount": "1.216000",
+            "active_amount": "0",
+            "energy_num": 32000,
+            "energy_price": "38.00000001",
+            "service_charge_type": "10010"
+        }
+    }
+    ```
+</ResponseExample>

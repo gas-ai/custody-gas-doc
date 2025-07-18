@@ -29,7 +29,6 @@ When calling the API, you need to encrypt the request parameters using the key w
 
 > **Note:**
 > - The key length must match the encryption algorithm (e.g., 16 bytes for AES-128, 24 bytes for AES-192, 32 bytes for AES-256).
-> - ECB mode is suitable for small amounts of data but is less secure. It is recommended to use more secure modes such as CBC if supported by the platform.
 > - The plaintext must be padded before encryption, commonly using PKCS7 padding.
 > - Implementations may vary in different programming languages. Please refer to the official documentation or SDK.
 > - Keep your key safe and do not disclose it.

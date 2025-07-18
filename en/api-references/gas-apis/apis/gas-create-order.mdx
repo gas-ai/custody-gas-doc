@@ -12,14 +12,33 @@ description: "Create Order"
 <ParamField query="receive_address" type="string" required>
   receive address
 </ParamField>
+<ParamField query="buy_type" type="integer">
+    0: Specified quantity 1: System estimation , default is 0 if not specified.
+</ParamField>
 <ParamField query="service_charge_type" type="string" required>
   rent time code: Request the order/price interface to return the cost codes for
   minutes, hours, days, and different times.
   <p>eg:10010 - 10 minutes, 20001 - 1 hour, 30001 - 1 day</p>
 </ParamField>
-<ParamField query="energy_num" type="integer" required>
+<ParamField query="energy_num" type="integer" >
   energy num : min value is 64000
+    <Note>
+        If buy_type=0, please enter the specific amount of energy
+    </Note>
 </ParamField>
+<ParamField query="address_to" type="string" >
+    The transfer address for estimating miner fees.
+    <Note>
+        Required when selecting **buy_type=1**.
+    </Note>
+</ParamField>
+<ParamField query="contract_address" type="string" >
+    Contract address for estimating miner fees.
+    <Note>
+        Required when selecting **buy_type=1**.
+    </Note>
+</ParamField>
+
 
 #### Response Parameters
 

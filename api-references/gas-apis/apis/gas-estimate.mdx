@@ -1,0 +1,63 @@
+---
+title: 预估费用
+api: GET /api/mpc/tron/gas/estimate
+description: "预估费用"
+---
+
+#### 请求参数数据结构
+
+<ParamField query="receive_address" type="string" required>
+    资源接收地址
+</ParamField>
+<ParamField query="address_to" type="string" required>
+    转账到账地址，用于预估矿工费。
+</ParamField>
+<ParamField query="contract_address" type="string" required>
+    合约地址，用于预估矿工费。
+</ParamField>
+<ParamField query="service_charge_type" type="string" required>
+    租赁周期code :请求order/price接口返回分钟 小时 天 不同时间的费用code。
+    <p>示例：10分钟:10010, 1小时:20001, 1天:30001</p>
+</ParamField>
+
+
+#### 响应参数数据结构
+
+<Expandable title="object">
+    <ResponseField name="contract_address" type="string">合约地址</ResponseField>
+    <ResponseField name="address_to" type="string">转账到账地址</ResponseField>
+    <ResponseField name="receive_address" type="string">资源接收地址</ResponseField>
+    <ResponseField name="amount" type="decimal">订单金额</ResponseField>
+    <ResponseField name="energy_amount" type="decimal">能量费用</ResponseField>
+    <ResponseField name="active_amount" type="decimal">激活费用</ResponseField>
+    <ResponseField name="energy_num" type="integer">能量数</ResponseField>
+    <ResponseField name="energy_price" type="decimal">能量单价</ResponseField>
+    <ResponseField name="service_charge_type" type="string">服务费code</ResponseField>
+</Expandable>
+
+<RequestExample>
+    ```curl cURL
+    curl -X GET \
+    'https://openapi.gasstation.ai/api/mpc/tron/gas/estimate?app_id=49e9c57da66788e5178c8fec2905067b&data=lgy/X0LwFTE/03yBGP0PIGgzZMY+KFzlOFAo0SZkChygmN8RnV+y1tTEbjTAR2SD04xSX+r9FKWqIaATxev6yQ=='
+    ```
+</RequestExample>
+
+<ResponseExample>
+    ```json
+    {
+        "code": 0,
+        "msg": "Success",
+        "data": {
+            "contract_address": "TED4rvM5VAG8kzKULTb7GXXY6ph9aTwjt3",
+            "address_to": "TE4Smnqa4cWiKZdmjzD64peEqLFqk213HS",
+            "receive_address": "TXxtczsXf1EYgWEbwSxwC85iMfdv6CGNRa",
+            "amount": "1.216000",
+            "energy_amount": "1.216000",
+            "active_amount": "0",
+            "energy_num": 32000,
+            "energy_price": "38.00000001",
+            "service_charge_type": "10010"
+        }
+    }
+    ```
+</ResponseExample>

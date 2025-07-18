@@ -50,6 +50,7 @@
               "pages": [
                 "api-references/gas-apis/apis/gas-balance",
                 "api-references/gas-apis/apis/gas-create-order",
+                "api-references/gas-apis/apis/gas-estimate",
                 "api-references/gas-apis/apis/gas-order-price",
                 "api-references/gas-apis/apis/gas-record-list"
               ]
