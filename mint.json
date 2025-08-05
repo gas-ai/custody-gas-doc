@@ -28,7 +28,7 @@
     "name": "官网",
     "url": "https://gasstation.ai/"
   },
-  "tabs": [
+  "primaryTab": [
     {
       "name": "API文档",
       "url": "api-references"
