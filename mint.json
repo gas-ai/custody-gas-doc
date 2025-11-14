@@ -51,12 +51,6 @@
             "product-description/product-introduction/automatic-rental-of-trx-energy",
             "product-description/product-introduction/API"
           ]
-        },
-        {
-          "group": "应用场景与解决方案",
-          "pages": [
-            "product-description/application-scenarios-solutions/solutions"
-          ]
         }
       ]
     },
