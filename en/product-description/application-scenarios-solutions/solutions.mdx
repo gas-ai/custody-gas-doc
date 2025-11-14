@@ -1,0 +1,125 @@
+---
+title: "GasStation Common Use Cases"
+---
+
+
+GasStation’s three core capabilities each address different scenarios.  
+The product includes:
+
+1. **Quick Rent**  
+2. **Auto Rent**  
+3. **API Rent**
+
+Use the following examples for guidance and adapt them to your own workflows.
+
+---
+
+# 1. Quick Rent
+
+Quick Rent serves **temporary, occasional, low-frequency, single-time** resource needs. Users can rent on demand without freezing TRX.
+
+---
+
+## **Scenario 1: Occasional USDT (TRC20) Transfers Without Energy**
+
+The user rarely uses TRON. When they need to transfer USDT, the address is short on Energy and burning TRX would be costly.
+
+👉 Lease 10–30 minutes of Energy with Quick Rent to finish the transfer.
+
+---
+
+## **Scenario 2: Temporary DApp Interactions**
+
+The user occasionally joins a DApp to stake, swap, or synthesize assets but lacks Energy.
+
+👉 Quick Rent adds enough Energy for a one-time contract execution.
+
+---
+
+## **Scenario 3: New Wallet Lacks Base Resources**
+
+Newly created wallets typically have no Bandwidth or Energy, causing basic transfers to fail.
+
+👉 Use Quick Rent to activate the address immediately.
+
+---
+
+---
+
+# 2. Auto Rent
+
+Auto Rent is built for **medium-to-high-frequency operations with predictable consumption**.  
+The system monitors thresholds in real time and tops up automatically.
+
+---
+
+## **Scenario 1: Exchange / Custody Withdrawal Top-Ups**
+
+Hot wallets run withdrawals all day, and low Energy leads to failed transactions.
+
+👉 Auto Rent replenishes resources whenever they drop below the threshold, keeping withdrawals smooth.
+
+---
+
+## **Scenario 2: DApp Backend Addresses with Heavy Contract Calls**
+
+Some DApps interact with the chain constantly; a resource shortage impacts user experience.
+
+👉 Auto Rent maintains the backend resources so contract calls stay reliable.
+
+---
+
+## **Scenario 3: Batch Operations (Airdrops / Rebates / Mass Transfers)**
+
+Batch tasks require a steady supply of Energy to avoid interruptions.
+
+👉 Auto Rent prevents scripts from pausing or failing due to insufficient resources.
+
+---
+
+---
+
+# 3. API Rent
+
+API Rent targets **enterprise integrations** such as exchanges, DApp backends, and clearing systems.  
+Your systems can trigger top-ups automatically via API.
+
+---
+
+## **Scenario 1: Withdrawal Systems Auto Top-Up**
+
+Before sending funds on-chain, the withdrawal system checks Energy levels. If insufficient, it triggers an automatic API top-up.
+
+👉 Withdrawals become fully automated with no manual steps.
+
+---
+
+## **Scenario 2: Gasless DApp Experience**
+
+Backend services top up Energy before executing smart contracts, so end users never deal with resource concepts.
+
+👉 Better user experience, fewer failures due to lack of Energy.
+
+---
+
+## **Scenario 3: Long-Running Scripts / Bots / Scheduled Jobs**
+
+Bots, clearing tasks, or batch scripts need resources throughout their lifecycle.
+
+👉 API Rent keeps resources sufficient while the processes run.
+
+---
+
+---
+
+# Summary
+
+| Capability | Core Value | Typical Scenarios |
+|-----------|------------|-------------------|
+| **Quick Rent** | On-demand, no TRX freeze | One-off transfer / DApp action / New address activation |
+| **Auto Rent** | Continuous top-ups, stable operations | Withdrawal top-ups / High-frequency DApps / Batch tasks |
+| **API Rent** | Fully automated integration | Withdrawal systems / Gasless DApps / Backend scripts |
+
+With these three approaches, GasStation serves users ranging from individuals to DApps and enterprise platforms—covering everything from one-time actions to fully automated resource management.
+
+

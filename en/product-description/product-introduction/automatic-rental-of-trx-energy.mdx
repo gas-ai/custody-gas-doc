@@ -1,0 +1,143 @@
+---
+title: "Auto Rent"
+---
+
+# What Is Auto Rent?
+
+Auto Rent continuously supplements Energy/Bandwidth for a TRON address.  
+You define the resource thresholds, refill amount, and duration in advance. Whenever an address drops below the threshold, the system automatically leases resources for you—no code or manual work required.
+
+![](/en/images/product-description/AutomaticLeasing-1.png)
+
+---
+
+# When Should You Use Auto Rent?
+
+Auto Rent is ideal for **medium-to-high-frequency, ongoing, and predictable** resource consumption—especially in mission-critical environments where transactions must not fail.
+
+Here are several typical scenarios that make Auto Rent indispensable.
+
+---
+
+**Example 1: Exchange / Custody Withdrawals**
+
+Hot wallets process a large number of withdrawals every day.  
+If they run out of Energy, some withdrawals fail and manual interventions are required.
+
+👉 Enable **Auto Rent** so that whenever Energy falls below the threshold, the wallet is topped up automatically. Withdrawals continue smoothly with no human involvement.
+
+---
+
+**Example 2: DApp with Frequent Smart Contract Calls**
+
+Certain DApps (games, staking platforms, swap contracts) trigger smart contracts frequently.  
+Without automatic top-ups, high-traffic periods can drain resources and break user flows.
+
+👉 Auto Rent keeps the backend addresses supplied with Energy, ensuring users can interact without interruption.
+
+---
+
+**Example 3: Batch Tasks (Airdrops, Rebates, Mass Transfers)**
+
+Large-scale batch operations can grind to a halt if scripts run out of Energy mid-process.
+
+👉 Auto Rent guarantees that Energy stays sufficient throughout the task, preventing failures.
+
+---
+
+**Summary**
+
+**Whenever an address “regularly” needs to submit transactions or execute contracts, Auto Rent is the way to go.**  
+It ensures uninterrupted resources and keeps your business running.
+
+---
+
+# Auto Rent Step-by-Step Guide
+
+Auto Rent supports ongoing TRON activities such as DApp sponsorship, withdrawal top-ups, and batch transactions.  
+Use the following steps to configure automatic top-up strategies—the system will take over from there.
+
+Entry point:  
+👉 [GasStation Auto Rent](https://www.gasstation.ai/b2c?tab=auto)
+
+---
+
+### **Step 1: Connect Your Wallet**
+
+1. Open the Auto Rent page  
+2. Click **“Connect Wallet”** (currently supports TronLink) 
+![](/en/images/product-description/AutomaticLeasing-2.png) 
+
+After connecting, the system reads your current resource status (remaining Energy, Bandwidth, TRX).
+
+> **Why connect a wallet?**  
+> Auto Rent needs to continuously monitor your address and delegate leased resources there.
+
+---
+
+### **Step 2: Configure the Trigger Threshold**
+
+Click “Auto Rent” to add a new rule.
+![](/en/images/product-description/AutomaticLeasing-3.png) 
+
+Fill in the fields as prompted:
+![](/en/images/product-description/AutomaticLeasing-4.png) 
+- **Resource address:** The address being monitored and topped up  
+- **Energy lower than:** Threshold that triggers automatic leasing  
+- **Energy to add:** Amount of Energy to lease each time  
+- **Leasing duration:** Valid period of each auto-rent order  
+- **Limit:** Custom limit on how many times the strategy can run  
+- **Status:** Enable or disable the strategy  
+- **Single spend:** Cost per order  
+- **Account balance:** Displays available balance; click Recharge to top up
+
+> **Why configure a threshold?**  
+> If resources are completely depleted, transactions fail.  
+> Triggering ahead of time keeps your business running.
+
+---
+
+> **Why set the amount?**  
+> Too little will trigger the strategy too often; too much may waste resources.  
+> Adjust it based on the real frequency of your workload.
+
+---
+
+> **Why pick a duration?**  
+> Once triggered, the leased resources are valid only during the lease period. Longer durations reduce how often the strategy runs.
+
+---
+
+### **Step 3: Save the Strategy and Enable Auto Rent**
+
+1. Double-check every setting  
+2. Click **“Confirm”** to save  
+3. The system immediately starts monitoring your address  
+4. When resources drop below the threshold, it creates an order and tops up automatically
+
+(Auto Rent uses account balance for payments. Please maintain sufficient balance—if it falls below the required amount for a single order, the strategy stops.)
+
+---
+
+**You Can Adjust Strategies Anytime**
+![](/en/images/product-description/AutomaticLeasing-5.png) 
+
+---
+
+**Once Auto Rent Is Active, You Can Safely Handle:**
+
+- Mass transfers  
+- High-frequency DApp contract calls  
+- Back-office clearing tasks  
+- Bots and automation  
+- Large airdrops / rebates  
+- Long-running Web3 backend services
+
+---
+
+**Track Orders at the Page Footer**
+![](/en/images/product-description/AutomaticLeasing-6.png) 
+Click any order to view detailed delegation info.
+![](/en/images/product-description/AutomaticLeasing-7.png) 
+
+

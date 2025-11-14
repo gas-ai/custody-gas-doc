@@ -1,0 +1,104 @@
+---
+title: "GasStation API Capabilities & Use Cases"
+---
+
+
+## 🚀 1. What Can the API Do?
+
+The API’s mission is simple:  
+**Automatically top up Energy / Bandwidth for your addresses so you never have to place manual orders.**
+
+### 🔧 Core Capabilities at a Glance
+
+#### **1) Automatically Create Leasing Orders**
+- Supports both Energy and Bandwidth
+- Auto top-up with no manual action required
+
+#### **2) Check Order & Resource Status**
+- Confirm whether an order succeeded
+- Verify that resources were delegated to the target TRON address
+
+#### **3) Pull Real-Time Resource Data**
+- Query current prices for Energy / Bandwidth
+- Check quotas, availability, and range limits
+
+#### **4) Batch Operations**
+- Create orders in bulk  
+- Query statuses in bulk  
+- Designed for large institutions or system tasks
+
+#### **5) Estimate Transaction Energy Consumption**
+- Predict Energy usage based on the transaction HEX  
+- Decide automatically whether a top-up is needed
+
+#### **6) API Token Authentication**
+- Secure backend integration  
+- Rate limiting, permissions, and allowlists
+
+---
+
+## 👥 2. Who Is the API For?
+
+Gas API is built for users or enterprises **with automation needs and heavy on-chain activity**.
+
+### ✔ Perfect for
+
+#### **• Exchanges / Custodians**
+- Large volumes of withdrawals and internal transfers  
+- Automatic top-ups lower failure rates
+
+#### **• DApps / Smart Contract Platforms**
+- Deliver a “Gasless” experience for users  
+- Avoid failed transactions caused by insufficient Energy
+
+#### **• Enterprise Wallets / Multi-Address Management**
+- Operate hundreds or thousands of business addresses  
+- Keep each address at the required resource level automatically
+
+#### **• Automation Scripts / Bots / Scheduled Jobs**
+- Batch airdrops or minting  
+- Automated clearing and scheduled tasks
+
+### ✘ Not Ideal For
+
+#### **• Individual Users**
+- It’s simpler to purchase or lease resources directly on the front-end  
+- No need to integrate the API
+
+---
+
+## 🧩 3. Typical Scenarios
+
+### **Scenario A: Exchange Auto Top-Up (Most Common)**
+1. A user requests a withdrawal  
+2. The system detects low Energy on the address  
+3. The API automatically creates an order  
+4. Once the delegation is completed, the withdrawal is executed
+
+> **Result:** Lower failure rates and less manual work.
+
+---
+
+### **Scenario B: DApp Gasless Mode**
+1. The user initiates a smart contract operation  
+2. The backend detects insufficient Energy  
+3. Automatic top-up → execute the transaction  
+4. Users do not feel the process and do not need to understand resource concepts
+
+> **Result:** Outstanding user experience.
+
+---
+
+
+## 📝 4. Summary
+
+**Why GasStation API matters:**  
+- Give your system an “automatic top-up” superpower  
+- Prevent transaction failures due to insufficient resources  
+- Support large-scale and high-frequency on-chain workloads  
+- Essential infrastructure for exchanges, DApps, wallets, and task systems
+
+👉 **Continue with the full API reference:**  
+[Go to the API Docs](/api-references/gas-apis/contact)
+
+
