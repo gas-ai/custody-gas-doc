@@ -9,23 +9,23 @@ This guide will help you complete the integration of the Gas Station platform AP
 1. Log in to the Gas Station platform.
 2. In the left navigation bar, select **API Management**.
 3. Click the **Create API** button, fill in the relevant information, and submit.
-![API Creation Example](/en/images/apis/gas-station-api-add.png)
+![API Creation Example](/images/apis/gas-station-api-add.png)
 4. After successful creation, the API will appear in the API list.
 
 ## Step 2: View the API's app_id and Key
 
 1. On the **API Management** page, find the API you just created.
 2. Click the API to enter the details page.
-![API Details Example](/en/images/apis/gas-station-api-detail.png)
+![API Details Example](/images/apis/gas-station-api-detail.png)
 3. On the details page, you can see the `app_id`. To view the `key`, you need to verify your identity through signature verification before it is displayed (please keep the key safe and do not disclose it).
-![API Signature Verification Example](/en/images/apis/gas-station-api-sign.png)
-![Key Viewing Example](/en/images/apis/gas-station-api-key.png)
+![API Signature Verification Example](/images/apis/gas-station-api-sign.png)
+![Key Viewing Example](/images/apis/gas-station-api-key.png)
 
 ## Step 3: Encrypt API Request Parameters with the Key Using AES
 
 When calling the API, you need to encrypt the request parameters using the key with AES encryption. Common AES modes include ECB, CBC, CFB, OFB, and CTR, and PKCS7 is a commonly used padding method. Please confirm the required encryption mode and padding method with the platform before encrypting.
 
-![AES Encryption Example](/en/images/apis/gas-station-ase.png)
+![AES Encryption Example](/images/apis/gas-station-ase.png)
 
 > **Note:**
 > - The key length must match the encryption algorithm (e.g., 16 bytes for AES-128, 24 bytes for AES-192, 32 bytes for AES-256).
