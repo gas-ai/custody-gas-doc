@@ -30,12 +30,37 @@
   },
   "tabs": [
     {
+      "name": "Product Guide",
+      "url": "product-description"
+    },
+    {
       "name": "API",
       "url": "api-references"
     }
   ],
 
   "navigation": [
+    {
+      "group": "Product Guide",
+      "pages": [
+        "product-description/Overview/about-gasstation",
+        {
+          "group": "Product Introduction",
+          "pages": [
+            
+            "product-description/product-introduction/quick-rental-of-trx-energy",
+            "product-description/product-introduction/automatic-rental-of-trx-energy",
+            "product-description/product-introduction/API"
+          ]
+        },
+        {
+          "group": "Application Scenarios & Solutions",
+          "pages": [
+            "product-description/application-scenarios-solutions/solutions"
+          ]
+        }
+      ]
+    },
     {
       "group": "Gas Station",
       "pages": [
