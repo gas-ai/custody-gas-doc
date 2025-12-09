@@ -19,6 +19,9 @@ description: "查询账户余额"
   <ResponseField name="balance" type="decimal">
     余额
   </ResponseField>
+ <ResponseField name="deposit_address" type="string">
+    充值地址
+  </ResponseField>
 </Expandable>
 
 <RequestExample>
@@ -35,7 +38,8 @@ description: "查询账户余额"
         "msg": "Success",
         "data": {
                 "symbol": "trx",
-                "balance": "92.4792050000000000"
+                "balance": "92.4792050000000000",
+                "deposit_address": "TVKpzEiJvhxriRDNoSucoXgMmu49RmXagU"
         }
     }
 
