@@ -19,6 +19,9 @@ description: "Query Balance"
   <ResponseField name="balance" type="decimal">
     balance
   </ResponseField>
+  <ResponseField name="deposit_address" type="string">
+    deposit address
+  </ResponseField>
 </Expandable>
 
 <RequestExample>
@@ -35,7 +38,8 @@ description: "Query Balance"
         "msg": "Success",
         "data": {
             "symbol": "trx",
-            "balance": "92.4792050000000000"
+            "balance": "92.479205",
+            "deposit_address": "TVKpzEiJvhxriRDNoSucoXgMmu49RmXagU"
         }
     }
     ```
