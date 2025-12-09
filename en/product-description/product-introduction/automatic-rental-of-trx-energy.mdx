@@ -1,143 +1,149 @@
 ---
-title: "Auto Rent"
+title: "Automatic Leasing"
 ---
 
-# What Is Auto Rent?
+# What is Automatic Leasing?
 
-Auto Rent continuously supplements Energy/Bandwidth for a TRON address.  
-You define the resource thresholds, refill amount, and duration in advance. Whenever an address drops below the threshold, the system automatically leases resources for you—no code or manual work required.
+Automatic Leasing is a method to continuously replenish energy/bandwidth for TRON addresses.  
+You can set resource thresholds, leasing quantities, and durations in advance. Once address resources are insufficient, the system will automatically trigger leasing without requiring code operations or manual intervention.
+
 
 ![](/images/product-description/AutomaticLeasing-1.png)
 
 ---
 
-# When Should You Use Auto Rent?
+# What Scenarios is Automatic Leasing Suitable For?
 
-Auto Rent is ideal for **medium-to-high-frequency, ongoing, and predictable** resource consumption—especially in mission-critical environments where transactions must not fail.
+Automatic Leasing is suitable for **medium-high frequency, continuous, predictable** resource consumption scenarios, especially business environments that require uninterrupted transactions.
 
-Here are several typical scenarios that make Auto Rent indispensable.
-
----
-
-**Example 1: Exchange / Custody Withdrawals**
-
-Hot wallets process a large number of withdrawals every day.  
-If they run out of Energy, some withdrawals fail and manual interventions are required.
-
-👉 Enable **Auto Rent** so that whenever Energy falls below the threshold, the wallet is topped up automatically. Withdrawals continue smoothly with no human involvement.
+Below are several typical examples to help you understand "when to use Automatic Leasing."
 
 ---
 
-**Example 2: DApp with Frequent Smart Contract Calls**
+**Example 1: Automatic Energy Replenishment for Withdrawals on Exchanges/Custodian Platforms**
 
-Certain DApps (games, staking platforms, swap contracts) trigger smart contracts frequently.  
-Without automatic top-ups, high-traffic periods can drain resources and break user flows.
+Exchange hot wallets process a large number of withdrawal requests daily.  
+If wallet energy is insufficient, some withdrawals will fail. Manual energy replenishment is inefficient and error-prone.
 
-👉 Auto Rent keeps the backend addresses supplied with Energy, ensuring users can interact without interruption.
+👉 After enabling **Automatic Leasing**, when wallet energy falls below the threshold, it will be automatically replenished to full capacity, ensuring smooth withdrawals without manual intervention.
 
 ---
 
-**Example 3: Batch Tasks (Airdrops, Rebates, Mass Transfers)**
+**Example 2: High-Frequency Smart Contract Calls by DApps**
 
-Large-scale batch operations can grind to a halt if scripts run out of Energy mid-process.
+Certain DApps (such as games, staking platforms, Swap contracts) have frequent calls.  
+Each user operation requires energy. Without automatic energy replenishment, resource shortages may occur during peak periods.
 
-👉 Auto Rent guarantees that Energy stays sufficient throughout the task, preventing failures.
+👉 Automatic Leasing ensures that DApp backend addresses maintain available energy continuously, preventing user operation failures due to insufficient resources.
+
+---
+
+**Example 3: Batch Task Scripts (Airdrops, Rebates, Batch Transfers)**
+
+When executing large-scale batch operations, if the script pauses midway due to insufficient energy, the entire task flow will be interrupted.
+
+👉 Using Automatic Leasing ensures continuous energy supply during script execution, preventing task failures due to resource exhaustion.
+
+
+
 
 ---
 
 **Summary**
 
-**Whenever an address “regularly” needs to submit transactions or execute contracts, Auto Rent is the way to go.**  
-It ensures uninterrupted resources and keeps your business running.
+**As long as your address "frequently needs" to send transactions or execute contracts, you should use Automatic Leasing.**  
+It ensures uninterrupted resource supply and continuous business operations.
 
 ---
 
-# Auto Rent Step-by-Step Guide
+# Automatic Leasing Operation Guide
 
-Auto Rent supports ongoing TRON activities such as DApp sponsorship, withdrawal top-ups, and batch transactions.  
-Use the following steps to configure automatic top-up strategies—the system will take over from there.
+Automatic Leasing is suitable for continuous TRON network operations, such as DApp payment on behalf, withdrawal energy replenishment, batch transactions, etc.  
+Through the following steps, you can quickly configure an automatic energy replenishment strategy for your address, and the system will automatically execute when needed.
 
-Entry point:  
-👉 [GasStation Auto Rent](https://www.gasstation.ai/b2c?tab=auto)
+Page Entry:  
+👉 [GasStation Automatic Leasing Page](https://www.gasstation.ai/b2c?tab=auto)
 
 ---
 
-### **Step 1: Connect Your Wallet**
+### **Step 1: Connect Wallet**
 
-1. Open the Auto Rent page  
-2. Click **“Connect Wallet”** (currently supports TronLink) 
+1. Open the Automatic Leasing page  
+2. Click **「Connect Wallet」** (Currently supports TronLink) 
 ![](/images/product-description/AutomaticLeasing-2.png) 
 
-After connecting, the system reads your current resource status (remaining Energy, Bandwidth, TRX).
+After connecting, the system will read your address's current resource status (remaining energy, bandwidth, TRX).
 
-> **Why connect a wallet?**  
-> Auto Rent needs to continuously monitor your address and delegate leased resources there.
+> **Why Connect Wallet?**  
+> After connecting the wallet, the system will create an account for you. You can directly use the wallet to pay for purchasing resources or recharge the account using the wallet.
 
 ---
 
-### **Step 2: Configure the Trigger Threshold**
+### **Step 2: Set Trigger Threshold**
 
-Click “Auto Rent” to add a new rule.
+At the "Automatic Leasing Button": Start adding automatic leasing rules.
 ![](/images/product-description/AutomaticLeasing-3.png) 
 
-Fill in the fields as prompted:
+Example:
+
+Fill in the relevant data as prompted:
 ![](/images/product-description/AutomaticLeasing-4.png) 
-- **Resource address:** The address being monitored and topped up  
-- **Energy lower than:** Threshold that triggers automatic leasing  
-- **Energy to add:** Amount of Energy to lease each time  
-- **Leasing duration:** Valid period of each auto-rent order  
-- **Limit:** Custom limit on how many times the strategy can run  
-- **Status:** Enable or disable the strategy  
-- **Single spend:** Cost per order  
-- **Account balance:** Displays available balance; click Recharge to top up
+- **Resource Receiving Address:** The address monitored by the platform for resource replenishment
+- **Energy Below:** Trigger automatic leasing when energy falls below the set threshold
+- **Replenish Energy:** Amount of energy to replenish to the address
+- **Lease Duration:** Time period for automatic leasing
+- **Limit:** Customize purchase frequency
+- **Status:** Choose to enable or disable
+- **Single Consumption:** Customize purchase frequency
+- **Account Balance:** Displays current balance, click recharge to add funds
 
-> **Why configure a threshold?**  
-> If resources are completely depleted, transactions fail.  
-> Triggering ahead of time keeps your business running.
-
----
-
-> **Why set the amount?**  
-> Too little will trigger the strategy too often; too much may waste resources.  
-> Adjust it based on the real frequency of your workload.
+> **Why Set a Threshold?**  
+> Complete resource depletion will cause transaction failures.  
+> Triggering leasing in advance through a threshold ensures uninterrupted business operations.
 
 ---
 
-> **Why pick a duration?**  
-> Once triggered, the leased resources are valid only during the lease period. Longer durations reduce how often the strategy runs.
+
+> **Why Set Quantity?**  
+> Too small a quantity will trigger automatic leasing frequently, while too large a quantity may waste resources.  
+> Set reasonably according to business frequency.
 
 ---
 
-### **Step 3: Save the Strategy and Enable Auto Rent**
 
-1. Double-check every setting  
-2. Click **“Confirm”** to save  
-3. The system immediately starts monitoring your address  
-4. When resources drop below the threshold, it creates an order and tops up automatically
-
-(Auto Rent uses account balance for payments. Please maintain sufficient balance—if it falls below the required amount for a single order, the strategy stops.)
+> **Why Choose Duration?**  
+> After automatic leasing is triggered, resources are only valid during the lease period. The longer the duration, the longer the available time.
 
 ---
 
-**You Can Adjust Strategies Anytime**
+
+
+### **Step 3: Save Configuration and Enable Automatic Leasing**
+
+1. Confirm all settings  
+2. Click **「Confirm」** to save the strategy
+3. The system will immediately start monitoring your address resources  
+4. When resources are insufficient, orders will be automatically created and energy replenished for you
+
+(Automatic Leasing can only use account balance to place orders. Please ensure sufficient account balance. If the account balance is lower than the funds required for a single resource replenishment, the strategy will stop running.)
+
+---
+**Your strategy can also be adjusted according to actual conditions after generation**
 ![](/images/product-description/AutomaticLeasing-5.png) 
 
----
-
-**Once Auto Rent Is Active, You Can Safely Handle:**
-
-- Mass transfers  
-- High-frequency DApp contract calls  
-- Back-office clearing tasks  
-- Bots and automation  
-- Large airdrops / rebates  
-- Long-running Web3 backend services
 
 ---
 
-**Track Orders at the Page Footer**
+**What Can You Confidently Do After Enabling Automatic Leasing?**
+
+- Large batch transfers  
+- High-frequency DApp contract operations  
+- Backend settlement tasks  
+- Robot tasks  
+- Batch airdrops / rebates  
+
+---
+**Your orders can be viewed at the bottom of the page**
 ![](/images/product-description/AutomaticLeasing-6.png) 
-Click any order to view detailed delegation info.
-![](/images/product-description/AutomaticLeasing-7.png) 
-
-
+Click on the agency details of a single order to view the details of this order.
+![](/images/product-description/AutomaticLeasing-7.png)
