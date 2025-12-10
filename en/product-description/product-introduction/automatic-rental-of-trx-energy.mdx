@@ -23,9 +23,9 @@ Below are several typical examples to help you understand "when to use Automatic
 **Example 1: Automatic Energy Replenishment for Withdrawals on Exchanges/Custodian Platforms**
 
 Exchange hot wallets process a large number of withdrawal requests daily.  
-If wallet energy is insufficient, some withdrawals will fail. Manual energy replenishment is inefficient and error-prone.
+If wallet address energy is insufficient, some withdrawals will fail. Manual energy replenishment is inefficient and error-prone.
 
-👉 After enabling **Automatic Leasing**, when wallet energy falls below the threshold, it will be automatically replenished to full capacity, ensuring smooth withdrawals without manual intervention.
+👉 After enabling **Automatic Leasing**, when wallet address energy falls below the threshold, it will be automatically replenished to full capacity, ensuring smooth withdrawals without manual intervention.
 
 ---
 
@@ -69,13 +69,13 @@ Page Entry:
 ### **Step 1: Connect Wallet**
 
 1. Open the Automatic Leasing page  
-2. Click **「Connect Wallet」** (Currently supports TronLink) 
-![](/images/product-description/AutomaticLeasing-2.png) 
-
-After connecting, the system will read your address's current resource status (remaining energy, bandwidth, TRX).
+2. Click **「Connect Wallet」** Currently supports TronLink/OKX (TronLink by default)
+![LinkWallet.png](/images/product-description/LinkWallet.png)
+After connecting, the system will read your address resource status, as well as TRX address balance and account balance.
 
 > **Why Connect Wallet?**  
-> After connecting the wallet, the system will create an account for you. You can directly use the wallet to pay for purchasing resources or recharge the account using the wallet.
+> After connecting the wallet, the system will create an account for you and obtain your asset balance and resource information (wallet address balance, account balance, available energy/total energy, available bandwidth/total bandwidth). You can use wallet address balance for payment or recharge the account using the wallet.
+![](/images/product-description/quick-rental-10.png)
 
 ---
 
@@ -99,7 +99,7 @@ Fill in the relevant data as prompted:
 
 > **Why Set a Threshold?**  
 > Complete resource depletion will cause transaction failures.  
-> Triggering leasing in advance through a threshold ensures uninterrupted business operations.
+> Triggering leasing in advance through a threshold prevents TRX burning due to insufficient energy.
 
 ---
 
@@ -145,5 +145,5 @@ Fill in the relevant data as prompted:
 ---
 **Your orders can be viewed at the bottom of the page**
 ![](/images/product-description/AutomaticLeasing-6.png) 
-Click on the agency details of a single order to view the details of this order.
+Click on the agency details of the corresponding order to view the details of this order.
 ![](/images/product-description/AutomaticLeasing-7.png)

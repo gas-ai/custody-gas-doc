@@ -23,7 +23,7 @@ Below are several typical examples to help you understand when to use "Quick Ren
 Users rarely transfer on TRON normally.  
 When needing to transfer USDT that day, they find their address has no energy, and transaction fees would directly burn a large amount of TRX.
 
-👉 Use **Quick Rental** to purchase short-term energy (e.g., 10 minutes / 30 minutes), complete the transfer immediately with lower cost.
+👉 Use **Quick Rental** to purchase short-term energy (e.g., 10 minutes), complete the transfer immediately with lower cost.
 
 ---
 
@@ -36,15 +36,8 @@ But the address has no energy and cannot execute.
 
 ---
 
-**Example 3: New Wallet Address Needs "Activation"**
 
-New addresses are usually in an unactivated state, without resources such as bandwidth/energy.
-
-👉 Use **Quick Rental** to supplement basic resources, making the address immediately usable (activated).
-
----
-
-**Example 4: Temporarily Needing Batch Transfers (Airdrops / Red Packets / Rebates)**
+**Example 3: Temporarily Needing Batch Transfers (Airdrops / Red Packets / Rebates)**
 
 Merchants, agents, or project parties occasionally need to execute a large number of transfers within a short time.
 
@@ -75,12 +68,13 @@ Page Entry:
 ### **Step 1: Connect Wallet**
 
 1. Open the Quick Rental page  
-2. Click **「Connect Wallet」** Currently supports TronLink
+2. Click **「Connect Wallet」** Currently supports TronLink/OKX (TronLink by default)
 ![LinkWallet.png](/images/product-description/LinkWallet.png)
-After connecting, the system will read your address resource status.
+After connecting, the system will read your address resource status, as well as TRX address balance and account balance.
 
 > **Why Connect Wallet?**  
-> After connecting the wallet, the system will create an account for you. You can directly use the wallet to pay for purchasing resources or recharge the account using the wallet.
+> After connecting the wallet, the system will create an account for you and obtain your asset balance and resource information (wallet address balance, account balance, available energy/total energy, available bandwidth/total bandwidth). You can use wallet address balance for payment or recharge the account using the wallet.
+![](/images/product-description/quick-rental-10.png)
 
 ---
 
@@ -89,10 +83,13 @@ After connecting, the system will read your address resource status.
 ![quick-rental-1.png](/images/product-description/quick-rental-1.png)
 Select the energy value you need to lease in the "Resource Quantity" input box. Or directly fill in your estimated frequency based on the estimated number of times. The system will automatically provide you with specific energy recommendations.
 
-**Selection Reference Method:**
+**Selection Reference Method:** (Energy consumption may vary slightly between different tokens)
 
 - **1 USDT(TRC20) Transfer**  
   ⚡ Generally requires about 64,400 Energy  (If the receiving address does not have USDT, the first transfer generally requires about 130,400 Energy)
+
+- **1 SunSwap Token Swap (USDT to USDD Exchange)**  
+  ⚡ Generally requires about 238,433 Energy (Different contracts may have significant differences in energy consumption due to complexity and rules. Please refer to the contract rules you ultimately execute.)
 
 > **Why Estimate Frequency?**  
 > Each transfer or contract call consumes energy. The system estimates how many transfers the current energy amount can support for you, avoiding repeated orders due to insufficient energy and ensuring transactions won't fail.
@@ -102,9 +99,9 @@ Select the energy value you need to lease in the "Resource Quantity" input box. 
 ### **Step 3: Choose Rental Duration (Very Important)**
 ![quick-rental-2.png](/images/product-description/quick-rental-2.png)
 
-The system supports multiple lease periods: such as 10 minutes, 30 minutes, 1 hour, 3 hours, 1 day, etc. The longer the time, the relatively higher the cost. Choosing the duration according to actual needs can maximize resource utilization.
+The system supports multiple lease periods: such as 10 minutes, 1 hour, 3 hours, 4 hours, 1 day, 30 days, etc. (Time periods may be adjusted according to actual conditions. Please refer to the actual time displayed by the system.) The longer the time, the relatively higher the cost. Choosing the duration according to actual needs can maximize resource utilization.
 
-- **Temporarily transfer once → 10~30 minutes is sufficient**  
+- **Temporarily transfer once → 10 minutes is sufficient**  
 - **Expecting multiple operations → 1 hour is more reliable**  
 - **It is recommended to reasonably choose the time according to your business needs**
 
@@ -160,12 +157,14 @@ Activation is one-time. Once activated, the address remains valid afterwards wit
 
 1. Confirm resource quantity, lease period, and receiving address are correct. Choose payment method.
 ![quick-rental-8.png](/images/product-description/quick-rental-8.png)
-Choosing wallet balance allows direct payment from your connected wallet.
 
 
 
-2. You can also choose account balance (if your account balance is sufficient) then click the **「Purchase」** button, which will deduct from your account balance. 
+
+2. You can choose wallet address balance or account balance for payment. Click the **「Purchase」** button, which will deduct from your account balance. 
 ![quick-rental-9.png](/images/product-description/quick-rental-9.png)
+Choosing account balance payment is safer and more convenient, and also supports creating automatic rental orders. It is recommended to prioritize account balance payment.
+
 3. If your account balance is insufficient, you should recharge (TRX)
 ![quick-rental-5.png](/images/product-description/quick-rental-5.png)
 1-You can recharge by scanning the QR code.
@@ -192,5 +191,5 @@ After completing this payment:
 
 **Your orders can be viewed at the bottom of the page**
 ![quick-rental-6.png](/images/product-description/quick-rental-6.png)
-Click on the agency details of a single order to view the details of this order.
+Click on the agency details of the corresponding order to view the details of this order.
 ![quick-rental-7.png](/images/product-description/quick-rental-7.png)
