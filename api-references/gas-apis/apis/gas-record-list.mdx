@@ -31,14 +31,23 @@ description: "通过id获取特定的代理记录"
   <ResponseField name="energy_num" type="integer">
     能量数量
   </ResponseField>
-  <ResponseField name="delegate_energy_num" type="integer">
-    已经代理数量
+    <ResponseField name="delegate_energy_num" type="integer">
+    已代理能量数量
   </ResponseField>
-  <ResponseField name="reclaim_energy_num" type="integer">
-    已回收数量
+   <ResponseField name="reclaim_energy_num" type="integer">
+    已回收能量数量
+  </ResponseField>
+    <ResponseField name="net_num" type="integer">
+    带宽数量
+  </ResponseField>
+   <ResponseField name="delegate_energy_num" type="integer">
+    已代理带宽数量
+  </ResponseField>
+    <ResponseField name="reclaim_net_num" type="integer">
+    已回收带宽数量
   </ResponseField>
   <ResponseField name="item_list" type="string">
-    子订单
+    能量子订单
     <Expandable title="object">
       <ResponseField name="energy_num" type="integer">
         能量代理数量
@@ -63,6 +72,32 @@ description: "通过id获取特定的代理记录"
       </ResponseField>
     </Expandable>
   </ResponseField>
+  <ResponseField name="net_item_list" type="string">
+    带宽子订单
+    <Expandable title="object">
+      <ResponseField name="net_num" type="integer">
+        带宽代理数量
+      </ResponseField>
+      <ResponseField name="net_price" type="string">
+        带宽价格,单位sun
+      </ResponseField>
+      <ResponseField name="net_txid" type="string">
+        带宽代理TXID
+      </ResponseField>
+      <ResponseField name="delegate_time" type="string">
+        代理时间
+      </ResponseField>
+      <ResponseField name="resource_address" type="string">
+        发送资源地址
+      </ResponseField>
+      <ResponseField name="reclaim_txid" type="string">
+        带宽回收TXID
+      </ResponseField>
+      <ResponseField name="reclaim_time" type="string">
+        带宽回收时间
+      </ResponseField>
+    </Expandable>
+  </ResponseField>
 </Expandable>
 
 <RequestExample>
@@ -75,31 +110,65 @@ description: "通过id获取特定的代理记录"
 <ResponseExample>
     ```json
     {
-        "code": 0,
-        "msg": "Success",
-        "data": [
-            {
-                "trade_no": "GAS47561362",
-                "id": 18,
-                "status": 10,
-                "receive_address": "TQcfr115r65EnxqqVLquYw84ux9VfUkpy4",
-                "amount": 2.432,
-                "energy_num": 64000,
-                "delegate_energy_num": 64000,
-                "reclaim_energy_num": 64000,
-                "item_list": [
-                    {
-                        "energy_num": 64000,
-                        "energy_price": "38",
-                        "energy_txid": "6468ed31731fa9fed5b620aefdeefdb0239d0aa6e918621602f080eb09f0802f",
-                        "delegate_time": "2025-06-27 22:09:11",
-                        "resource_address": "TWJiWSTcPqdpUY6goH5N5ePsTiSUCXejuA",
-                        "reclaim_txid": "ae2150732ca9dcf41e530fbb3828ebe4e601b69c6b244c39726daacebc021e08",
-                        "reclaim_time": "2025-06-27 22:22:00"
-                    }
-                ]
-            }
-        ]
+  "code": 0,
+  "msg": "Success",
+  "data": [
+    {
+      "trade_no": "GAS64075435",
+      "id": 1468,
+      "request_id": "123124312",
+      "status": 1,
+      "receive_address": "TQcfr115r65EnxqqVLquYw84ux9VfUkpy4",
+      "amount": "0.6",
+      "energy_num": 0,
+      "net_num": 2000,
+      "delegate_energy_num": 0,
+      "delegate_net_num": 2000,
+      "reclaim_energy_num": 0,
+      "reclaim_net_num": 0,
+      "item_list": [
+
+      ],
+      "net_item_list": [
+        {
+          "net_num": 500,
+          "net_price": "300",
+          "net_txid": "35a8d0de276044ab364a1dbb127fade4f88bd6e90936e8358a24112ba47763e7",
+          "delegate_time": "2025-12-15 20:48:34",
+          "resource_address": "TWJiWSTcPqdpUY6goH5N5ePsTiSUCXejuA",
+          "reclaim_txid": null,
+          "reclaim_time": "2025-12-15 20:58:34"
+        },
+        {
+          "net_num": 500,
+          "net_price": "300",
+          "net_txid": "e509da6ba7e2b41e0d0df044dc9096577c55a0c56663871d2d33e67c0e260350",
+          "delegate_time": "2025-12-15 20:48:35",
+          "resource_address": "TWJiWSTcPqdpUY6goH5N5ePsTiSUCXejuA",
+          "reclaim_txid": null,
+          "reclaim_time": "2025-12-15 20:58:35"
+        },
+        {
+          "net_num": 500,
+          "net_price": "300",
+          "net_txid": "6c3ae78f38cae53d1fe58dc3135f534118accf02e08649b93bff6ffe73653320",
+          "delegate_time": "2025-12-15 20:48:36",
+          "resource_address": "TWJiWSTcPqdpUY6goH5N5ePsTiSUCXejuA",
+          "reclaim_txid": null,
+          "reclaim_time": "2025-12-15 20:58:36"
+        },
+        {
+          "net_num": 500,
+          "net_price": "300",
+          "net_txid": "a19e896afababc9c0ede453c6a348118ee6f2a65679fa721c3a76ee228081116",
+          "delegate_time": "2025-12-15 20:48:38",
+          "resource_address": "TWJiWSTcPqdpUY6goH5N5ePsTiSUCXejuA",
+          "reclaim_txid": null,
+          "reclaim_time": "2025-12-15 20:58:38"
+        }
+      ]
     }
+  ]
+}
     ```
 </ResponseExample>
