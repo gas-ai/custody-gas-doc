@@ -14,6 +14,27 @@ description: "购买资源创建订单"
 </ParamField>
 <ParamField query="buy_type" type="integer">
   购买资源方式 0:客户指定数量(默认),1:系统预估
+  
+ 
+
+   <Note>
+   **所有方式均遵守最小购买值限制：**
+   - 带宽的最小购买数量为 5000
+   - 能量的最小购买数量为 64400
+
+1. **系统预估（buy_type = 1）只能购买能量**  
+   - 不支持购买带宽  
+   - `net_num` 不可传  
+
+2. **客户指定数量（buy_type = 0）时，不能同时购买能量和带宽**  
+   - `energy_num` 与 `net_num` 只能二选一  
+
+3. **buy_type = 0 时参数要求**  
+   - 至少填写 `energy_num` 或 `net_num` 其中一个  
+  
+  </Note>
+
+
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
   租赁周期code :请求order/price接口返回分钟 小时 天 不同时间的费用code。
@@ -25,6 +46,14 @@ description: "购买资源创建订单"
         选择buy_type=0时需要填写。
     </Note>
 </ParamField>
+
+<ParamField query="net_num" type="integer">
+  购买带宽数量 :最小值5000
+    <Note>
+        选择buy_type=0时需要填写。
+    </Note>
+</ParamField>
+
 <ParamField query="address_to" type="string" >
     转账到账地址，用于预估矿工费。
     <Note>
