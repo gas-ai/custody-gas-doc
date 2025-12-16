@@ -14,9 +14,6 @@ description: "购买资源创建订单"
 </ParamField>
 <ParamField query="buy_type" type="integer">
   购买资源方式 0:客户指定数量(默认),1:系统预估
-  
- 
-
    <Note>
    **所有方式均遵守最小购买值限制：**
    - 带宽的最小购买数量为 5000
@@ -24,7 +21,6 @@ description: "购买资源创建订单"
 
 1. **系统预估（buy_type = 1）只能购买能量**  
    - 不支持购买带宽  
-   - `net_num` 不可传  
 
 2. **客户指定数量（buy_type = 0）时，不能同时购买能量和带宽**  
    - `energy_num` 与 `net_num` 只能二选一  

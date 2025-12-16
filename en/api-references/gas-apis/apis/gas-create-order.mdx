@@ -14,6 +14,21 @@ description: "Create Order"
 </ParamField>
 <ParamField query="buy_type" type="integer">
     0: Specified quantity 1: System estimation , default is 0 if not specified.
+    <Note>
+   **All methods are subject to minimum purchase value limits.：**
+   - The minimum purchase quantity for bandwidth is 5000.
+   - The minimum purchase quantity for energy is 64400.
+
+1. **System estimates (buy_type = 1) only allow the purchase of energy.**  
+   - Purchasing bandwidth is not supported. 
+
+2. **When the customer specifies a quantity (buy_type = 0), they cannot purchase both energy and bandwidth simultaneously.**  
+   - Only one of `energy_num` and `net_num` can be selected.  
+
+3. **Parameter requirements when buy_type = 0**  
+   - Please fill in at least one of the fields: `energy_num` or `net_num`.
+  
+  </Note>
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
   rent time code: Request the order/price interface to return the cost codes for
@@ -24,6 +39,12 @@ description: "Create Order"
   energy num : min value is 64000
     <Note>
         If buy_type=0, please enter the specific amount of energy
+    </Note>
+</ParamField>
+<ParamField query="net_num" type="integer">
+    net num : min value is 5000
+    <Note>
+         If buy_type=0, please enter the specific amount of net
     </Note>
 </ParamField>
 <ParamField query="address_to" type="string" >
