@@ -49,6 +49,7 @@
           "pages": [
             "product-description/product-introduction/quick-rental-of-trx-energy",
             "product-description/product-introduction/automatic-rental-of-trx-energy",
+            "product-description/product-introduction/EnergyDistribution",
             "product-description/product-introduction/API"
           ]
         }
