@@ -8,7 +8,7 @@ description: "Estimate Order Amount"
 
 <ParamField query="receive_address" type="string" required>
     receive addres
-    <Note>Need to hold the available balance of the currency corresponding to contracted_address, otherwise the miner fee estimation will fail</Note>
+    <Note>Please ensure that the received address holds the token corresponding to the contracted_address, otherwise the miner fee estimation will fail</Note>
 </ParamField>
 <ParamField query="address_to" type="string" required>
     The transfer address for estimating miner fees.

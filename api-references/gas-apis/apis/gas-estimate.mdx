@@ -9,6 +9,7 @@ description: "预估费用"
 
 <ParamField query="receive_address" type="string" required>
     资源接收地址
+    <Note>请确保 receive_address 持有contract_address对应代币，否则矿工费预估失败。</Note>
 </ParamField>
 <ParamField query="address_to" type="string" required>
     转账到账地址，用于预估矿工费。
@@ -18,7 +19,7 @@ description: "预估费用"
 </ParamField>
 <ParamField query="service_charge_type" type="string" required>
     租赁周期code :请求order/price接口返回分钟 小时 天 不同时间的费用code。
-    <p>示例：10分钟:10010, 1小时:20001, 1天:30001</p>
+    <p>示例：10分钟:10010, 1小时:20001, 1天:30001</p>   
 </ParamField>
 
 
