@@ -20,8 +20,7 @@ description: "Retrieve specific order records through ID"
     Unique transaction identifier
   </ResponseField>
   <ResponseField name="status" type="integer">
-    Status: 0 for order creation success, 1 for resource delegation success, 2
-    for resource delegation failure,3 for partially success,10 for reclaim success
+    Status: `0` Order creation successful, `1` Proxy resource successful, `2` Proxy resource failed, `3` partially successful, `10` Recycling successful
   </ResponseField>
   <ResponseField name="receive_address" type="string">
     resource receive address

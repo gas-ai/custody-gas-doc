@@ -19,8 +19,9 @@ description: "Create Order"
    - The minimum purchase quantity for bandwidth is 5000.
    - The minimum purchase quantity for energy is 64400.
 
-1. **System estimates (buy_type = 1) only allow the purchase of energy.**  
-   - Purchasing bandwidth is not supported. 
+1. **System estimates (buy_type = 1)**  
+   - Please ensure that the receive_address holds the token corresponding to the contracte_address, otherwise the miner fee estimation will fail
+   - Only allow the purchase of energy,Purchasing bandwidth is not supported. 
 
 2. **When the customer specifies a quantity (buy_type = 0), they cannot purchase both energy and bandwidth simultaneously.**  
    - Only one of `energy_num` and `net_num` can be selected.  
