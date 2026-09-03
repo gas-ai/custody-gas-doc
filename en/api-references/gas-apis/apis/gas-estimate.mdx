@@ -1,9 +1,15 @@
 ---
 title: Estimate Order Amount
 api: GET /api/tron/gas/estimate
-description: "Estimate Order Amount"
+description: "Estimate TRON Energy costs; supports resource estimation for standard token transfers and contract calls."
 ---
-<Note>The current interface only supports TRON energy fee estimation, and does not include bandwidth (Net) fees</Note>
+<Note>
+    The current API estimates only TRON Energy costs; it does not include Net (bandwidth) costs.
+
+    The following estimation scenarios are supported:
+    - Standard token transfers: Do not provide `amount` or `data`.
+    - Contract invocation transactions: Provide the ABI-encoded `data` (in hex format).
+</Note>
 #### Request Parameters
 
 <ParamField query="receive_address" type="string" required>
@@ -12,6 +18,10 @@ description: "Estimate Order Amount"
 </ParamField>
 <ParamField query="address_to" type="string" required>
     The transfer address for estimating miner fees.
+    <Note>
+        - Standard token transfer scenario: `address_to` is the actual recipient address.
+        - Contract invocation transaction scenario: `address_to` is the contract address, and it must match `contract_address`.
+    </Note>
 </ParamField>
 <ParamField query="contract_address" type="string" required>
     Contract address for estimating miner fees.
@@ -20,6 +30,18 @@ description: "Estimate Order Amount"
     rent time code: Request the order/price interface to return the cost codes for
     minutes, hours, days, and different times.
     <p>eg:10010 - 10 minutes, 20001 - 1 hour, 30001 - 1 day</p>
+</ParamField>
+<ParamField query="amount" type="string">
+    Contract invocation amount
+    <Note>
+        When used for contract estimation scenarios, `amount` represents the value associated with the contract invocation. This parameter is optional for standard transfer estimation scenarios.
+    </Note>
+</ParamField>
+<ParamField query="data" type="string">
+    Contract invocation data; hexadecimal data constructed via ABI encoding.
+    <Note>
+        If `data` is provided, the API treats the request as a contract transaction for resource estimation; this parameter is optional for standard transfer estimation scenarios.
+    </Note>
 </ParamField>
 
 
