@@ -1,10 +1,15 @@
 ---
 title: 预估费用
 api: GET /api/tron/gas/estimate
-description: "预估费用"
+description: "预估 TRON Energy 费用，支持普通代币转账及合约调用资源预估"
 ---
-<Note>当前接口仅支持 TRON 能量（Energy）费用预估，不包含带宽（Net）费用</Note>
+<Note>
+当前接口仅预估 TRON Energy 费用，不包含 Net（带宽）费用。
 
+支持以下预估场景：
+- 普通代币转账：不传 `amount` 和 `data`；
+- 合约调用交易：传入 ABI 编码后的 `data` hex 数据。
+</Note>
 #### 请求参数数据结构
 
 <ParamField query="receive_address" type="string" required>
@@ -13,6 +18,10 @@ description: "预估费用"
 </ParamField>
 <ParamField query="address_to" type="string" required>
     转账到账地址，用于预估矿工费。
+    <Note>
+    - 普通代币转账场景：`address_to` 为实际收款地址。
+    - 合约调用交易场景：`address_to` 为合约地址，且需与 `contract_address` 保持一致。
+    </Note>
 </ParamField>
 <ParamField query="contract_address" type="string" required>
     合约地址，用于预估矿工费。
@@ -21,7 +30,18 @@ description: "预估费用"
     租赁周期code :请求order/price接口返回分钟 小时 天 不同时间的费用code。
     <p>示例：10分钟:10010, 1小时:20001, 1天:30001</p>   
 </ParamField>
-
+<ParamField query="amount" type="string">
+    合约调用金额
+    <Note>
+    用于合约预估场景时，amount 表示本次合约调用关联的金额.普通转账预估场景可不传。
+    </Note>
+</ParamField>
+<ParamField query="data" type="string">
+    合约调用 data，由 ABI 编码构建出的 16 进制数据。
+    <Note>
+    data 非空时，接口会将其作为合约交易传入进行资源预估；普通转账预估场景可不传。
+    </Note>
+</ParamField>
 
 #### 响应参数数据结构
 
