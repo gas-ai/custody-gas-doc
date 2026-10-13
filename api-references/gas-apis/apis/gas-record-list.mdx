@@ -16,17 +16,20 @@ description: "通过id获取特定的代理记录"
   <ResponseField name="trade_no" type="string">
     订单ID
   </ResponseField>
-  <ResponseField name="requset_id" type="string">
+  <ResponseField name="request_id" type="string">
     业务方ID
   </ResponseField>
   <ResponseField name="status" type="integer">
     状态：`0` 创建订单成功,  `1` 代理资源成功,  `2` 代理资源失败, `3` 部分成功, `10` 回收成功
   </ResponseField>
+  <ResponseField name="service_charge_type" type="string">
+    服务费类型。能量速充固定为 `10000`。
+  </ResponseField>
   <ResponseField name="receive_address" type="string">
     资源接收地址
   </ResponseField>
   <ResponseField name="amount" type="decimal">
-    支付金额
+    支付金额。速充订单在结算完成前为按购买数量计算的预估金额，结算完成后更新为最终结算金额。
   </ResponseField>
   <ResponseField name="energy_num" type="integer">
     能量数量
@@ -40,7 +43,7 @@ description: "通过id获取特定的代理记录"
     <ResponseField name="net_num" type="integer">
     带宽数量
   </ResponseField>
-   <ResponseField name="delegate_energy_num" type="integer">
+   <ResponseField name="delegate_net_num" type="integer">
     已代理带宽数量
   </ResponseField>
     <ResponseField name="reclaim_net_num" type="integer">
@@ -98,6 +101,22 @@ description: "通过id获取特定的代理记录"
       </ResponseField>
     </Expandable>
   </ResponseField>
+  <ResponseField name="swap_info" type="object">
+    能量速充信息，仅速充订单返回；普通订单不返回该字段。
+    <Expandable title="object">
+      <ResponseField name="address" type="string">速充接收地址</ResponseField>
+      <ResponseField name="energy_used" type="integer">速充前已使用能量</ResponseField>
+      <ResponseField name="energy_num" type="integer">速充前可用能量</ResponseField>
+      <ResponseField name="buy_energy_num" type="integer">用户原始购买能量数量</ResponseField>
+      <ResponseField name="send_energy_num" type="integer">实际代理能量数量</ResponseField>
+      <ResponseField name="end_energy_used" type="integer">回收完成后已使用能量</ResponseField>
+      <ResponseField name="end_energy_num" type="integer">回收完成后可用能量</ResponseField>
+      <ResponseField name="freeze_energy_num" type="integer">首次冻结采用的能量基数</ResponseField>
+      <ResponseField name="freeze_amount" type="string">首次冻结金额，单位TRX</ResponseField>
+      <ResponseField name="current_lock_amount" type="string">当前剩余冻结金额，单位TRX</ResponseField>
+      <ResponseField name="settlement_amount" type="string">最终结算金额，单位TRX。按回收完成后系统确认的最终计费能量数量与下单时的价格、费率快照计算</ResponseField>
+    </Expandable>
+  </ResponseField>
 </Expandable>
 
 <RequestExample>
@@ -118,6 +137,7 @@ description: "通过id获取特定的代理记录"
       "id": 1468,
       "request_id": "123124312",
       "status": 1,
+      "service_charge_type": "10010",
       "receive_address": "TQcfr115r65EnxqqVLquYw84ux9VfUkpy4",
       "amount": "0.6",
       "energy_num": 0,

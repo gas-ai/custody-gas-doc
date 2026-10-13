@@ -16,17 +16,20 @@ description: "Retrieve specific order records through ID"
   <ResponseField name="trade_no" type="string">
     Resource purchase transaction No
   </ResponseField>
-  <ResponseField name="requset_id" type="string">
+  <ResponseField name="request_id" type="string">
     Unique transaction identifier
   </ResponseField>
   <ResponseField name="status" type="integer">
     Status: `0` Order creation successful, `1` Proxy resource successful, `2` Proxy resource failed, `3` partially successful, `10` Recycling successful
   </ResponseField>
+  <ResponseField name="service_charge_type" type="string">
+    Service charge type. Energy flash recharge always uses `10000`.
+  </ResponseField>
   <ResponseField name="receive_address" type="string">
     resource receive address
   </ResponseField>
   <ResponseField name="amount" type="decimal">
-    amount
+    Payment amount. For flash recharge orders this is an estimate based on the purchased quantity until settlement completes, after which it is updated to the final settlement amount.
   </ResponseField>
   <ResponseField name="energy_num" type="integer">
     energy num
@@ -40,7 +43,7 @@ description: "Retrieve specific order records through ID"
     <ResponseField name="net_num" type="integer">
     net num
   </ResponseField>
-   <ResponseField name="delegate_energy_num" type="integer">
+   <ResponseField name="delegate_net_num" type="integer">
        delegate net num
   </ResponseField>
     <ResponseField name="reclaim_net_num" type="integer">
@@ -98,6 +101,22 @@ description: "Retrieve specific order records through ID"
       </ResponseField>
     </Expandable>
   </ResponseField>
+  <ResponseField name="swap_info" type="object">
+    Energy flash recharge information. This field is returned only for flash recharge orders and is omitted for regular orders.
+    <Expandable title="object">
+      <ResponseField name="address" type="string">Energy receiving address</ResponseField>
+      <ResponseField name="energy_used" type="integer">Energy used before flash recharge</ResponseField>
+      <ResponseField name="energy_num" type="integer">Available energy before flash recharge</ResponseField>
+      <ResponseField name="buy_energy_num" type="integer">Energy quantity originally purchased by the user</ResponseField>
+      <ResponseField name="send_energy_num" type="integer">Energy actually delegated</ResponseField>
+      <ResponseField name="end_energy_used" type="integer">Energy used after reclaim is complete</ResponseField>
+      <ResponseField name="end_energy_num" type="integer">Available energy after reclaim is complete</ResponseField>
+      <ResponseField name="freeze_energy_num" type="integer">Energy base used for the initial lock</ResponseField>
+      <ResponseField name="freeze_amount" type="string">Initially locked amount in TRX</ResponseField>
+      <ResponseField name="current_lock_amount" type="string">Current locked amount in TRX</ResponseField>
+      <ResponseField name="settlement_amount" type="string">Final settlement amount in TRX, calculated from the final billed energy quantity confirmed by the system after reclaim, using the price and fee-rate snapshot taken at order time</ResponseField>
+    </Expandable>
+  </ResponseField>
 </Expandable>
 
 <RequestExample>
@@ -118,6 +137,7 @@ description: "Retrieve specific order records through ID"
       "id": 1468,
       "request_id": "123124312",
       "status": 1,
+      "service_charge_type": "10010",
       "receive_address": "TQcfr115r65EnxqqVLquYw84ux9VfUkpy4",
       "amount": "0.6",
       "energy_num": 0,
