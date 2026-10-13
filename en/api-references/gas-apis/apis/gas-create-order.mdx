@@ -68,6 +68,12 @@ description: "Create Order"
   <ResponseField name="tradeNo" type="string">
     tradeNo
   </ResponseField>
+   <ResponseField name="trade_no" type="string">
+    trade_no。The same field named in two conventions (camelCase / snake_case) as tradeNo; the values are identical — use either one.
+  </ResponseField>
+   <ResponseField name="amount" type="string">
+    Payment amount
+  </ResponseField>
 </Expandable>
 
 <RequestExample>
@@ -79,12 +85,14 @@ description: "Create Order"
 
 <ResponseExample>
     ```json
-    {
-        "code": 0,
-        "msg": "Success",
-        "data": {
-            "trade_no": "1234"
-        }
+  {
+    "code": 0,
+    "msg": "Success",
+    "data": {
+        "amount": "2.187",
+        "tradeNo": "GAS48760509",
+        "trade_no": "GAS48760509"
     }
+}
     ```
 </ResponseExample>
