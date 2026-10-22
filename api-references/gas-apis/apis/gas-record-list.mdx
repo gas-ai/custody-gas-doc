@@ -13,8 +13,11 @@ description: "通过id获取特定的代理记录"
 #### 响应参数数据结构
 
 <Expandable title="object">
-  <ResponseField name="trade_no" type="string">
+  <ResponseField name="id" type="integer">
     订单ID
+  </ResponseField>
+  <ResponseField name="trade_no" type="string">
+    订单号
   </ResponseField>
   <ResponseField name="request_id" type="string">
     业务方ID
@@ -48,6 +51,9 @@ description: "通过id获取特定的代理记录"
   </ResponseField>
     <ResponseField name="reclaim_net_num" type="integer">
     已回收带宽数量
+  </ResponseField>
+    <ResponseField name="order_source" type="integer">
+    状态：`0` 手动下单,  `1` api购买,  `2` 自动租赁, `3` 能量转租
   </ResponseField>
   <ResponseField name="item_list" type="string">
     能量子订单

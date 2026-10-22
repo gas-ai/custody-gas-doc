@@ -7,7 +7,7 @@ description: "购买资源创建订单"
 #### 请求参数数据结构
 
 <ParamField query="request_id" type="string" required>
-  业务方ID
+  业务方ID.不可重复提交,限 32 字符,仅支持字母、数字、下划线（`_`）和短横线（`-`）.
 </ParamField>
 <ParamField query="receive_address" type="string" required>
   资源接收地址

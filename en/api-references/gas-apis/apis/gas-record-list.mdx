@@ -13,6 +13,9 @@ description: "Retrieve specific order records through ID"
 #### Response Parameters
 
 <Expandable title="object">
+ <ResponseField name="id" type="integer">
+     Order ID
+  </ResponseField>
   <ResponseField name="trade_no" type="string">
     Resource purchase transaction No
   </ResponseField>
@@ -42,6 +45,9 @@ description: "Retrieve specific order records through ID"
   </ResponseField>
     <ResponseField name="net_num" type="integer">
     net num
+  </ResponseField>
+     <ResponseField name="order_source" type="integer">
+    order source: `0` Manual order, `1` API purchase, `2` Automatic lease, `3` Energy sublease
   </ResponseField>
    <ResponseField name="delegate_net_num" type="integer">
        delegate net num
@@ -141,6 +147,7 @@ description: "Retrieve specific order records through ID"
       "receive_address": "TQcfr115r65EnxqqVLquYw84ux9VfUkpy4",
       "amount": "0.6",
       "energy_num": 0,
+      "order_source": 0,
       "net_num": 2000,
       "delegate_energy_num": 0,
       "delegate_net_num": 2000,
