@@ -50,7 +50,9 @@
                       "api-references/gas-apis/apis/gas-flash-open",
                       "api-references/gas-apis/apis/gas-estimate",
                       "api-references/gas-apis/apis/gas-order-price",
-                      "api-references/gas-apis/apis/gas-record-list"
+                      "api-references/gas-apis/apis/gas-record-list",
+                      "api-references/gas-apis/apis/gas-sync-record-list"
+
                     ]
                   }
                 ]
