@@ -1,0 +1,102 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Gas Station",
+  "colors": {
+    "primary": "#2662FF",
+    "light": "#2662FF",
+    "dark": "#2662FF"
+  },
+  "favicon": "/logo/gas_station_logo.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "产品介绍",
+        "groups": [
+          {
+            "group": "关于GasStation",
+            "pages": [
+              "product-description/Overview/about-gasstation",
+              {
+                "group": "产品功能",
+                "pages": [
+                  "product-description/product-introduction/quick-rental-of-trx-energy",
+                  "product-description/product-introduction/automatic-rental-of-trx-energy",
+                  "product-description/product-introduction/EnergyDistribution",
+                  "product-description/product-introduction/API"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API文档",
+        "groups": [
+          {
+            "group": "Gas Station",
+            "pages": [
+              "api-references/gas-apis/contact",
+              "api-references/gas-apis/guide/gas-account-guide",
+              {
+                "group": "API接口",
+                "pages": [
+                  "api-references/gas-apis/apis/description",
+                  {
+                    "group": "资源购买",
+                    "pages": [
+                      "api-references/gas-apis/apis/gas-balance",
+                      "api-references/gas-apis/apis/gas-create-order",
+                      "api-references/gas-apis/apis/gas-flash-open",
+                      "api-references/gas-apis/apis/gas-estimate",
+                      "api-references/gas-apis/apis/gas-order-price",
+                      "api-references/gas-apis/apis/gas-record-list",
+                      "api-references/gas-apis/apis/gas-sync-record-list"
+
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "交易回调通知",
+                "pages": [
+                  "api-references/gas-apis/notify/tron"
+                ]
+              },
+              "api-references/gas-apis/err-code"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/gas_station_logo.svg",
+    "dark": "/logo/gas_station_logo.svg"
+  },
+  "api": {
+    "playground": {
+      "display": "simple"
+    },
+    "mdx": {
+      "server": "https://openapi.gasstation.ai"
+    }
+  },
+  "appearance": {
+    "default": "light",
+    "strict": true
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "英文",
+        "href": "https://gasdocs-en.gasstation.ai/api-references/gas-apis/apis/description"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "官网",
+      "href": "https://gasstation.ai/"
+    }
+  }
+}
